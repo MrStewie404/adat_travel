@@ -1,0 +1,19 @@
+{% block main %}
+  <div class="form-group m-b-0">
+    <label class="form-control-label m-b-0">{{ title }}</label><br>
+    <span class="{% block span_class %}m-l-1{% endblock %}" style="color: #757575">
+      {% if content %}
+        {% block content %}
+          {% if url_name %}
+            {% url url_name content.pk as url_path %}
+            <a href="{{ url_path }}">{{ content }}</a>
+          {% else %}
+            {{ content }}
+          {% endif %}
+        {% endblock %}
+      {% else %}
+        ---
+      {% endif %}
+    </span>
+  </div>
+{% endblock %}

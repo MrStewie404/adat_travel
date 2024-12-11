@@ -1,0 +1,17 @@
+{% extends 'main/snippets/model_dashboard/s_model_dashboard_item.html' %}
+
+{% load format_extensions %}
+
+{% block span_class %}{% endblock %}
+
+{% block content %}
+  {% for phone in content %}
+    {% if phone %}
+      <a class="d-inline-block" href="tel:{{ phone.phone_number|phonenumber }}">
+        <i class="icofont icofont-phone"></i>
+        <p class="d-inline" style="font-size: inherit">{{ phone.phone_number|phonenumber }}
+        </p>
+      </a>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

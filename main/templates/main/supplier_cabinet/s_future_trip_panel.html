@@ -1,0 +1,75 @@
+{% extends 'main/supplier_cabinet/s_base_dashboard_panel.html' %}
+
+{% load static %}
+{% load format_extensions %}
+{% load collection_extensions %}
+
+{% block body_css_class %}{{ block.super }} p-t-0{% endblock %}
+
+{% block body_style %}position: relative; overflow: hidden; font-size: 18px;{% endblock %}
+
+{% block body_content %}
+  <div class="rn-panel-r-large" style="background-color: #ddf0ee; position: relative; height: 30vh;
+      margin-left: -15px; margin-right: -15px;">
+    <div class="w-100" style="height: 100%;
+        background: url('{% if trip_template.image %} {% block route_photo_url %} {% url "supplier_lk_route_photo" cabinet_id trip_template.pk %} {% endblock %} {% else %} {% static 'images/logo/default/tobu-logo-short.png' %} {% endif %}') no-repeat center;
+        background-size: contain;">
+    </div>
+  </div>
+
+  <div class="image-overlay-label bg-success-overlay" style="position: absolute; top: 5px; right: 15px;">
+    {{ trip_template.duration_str }}{% if trip_template.transport %} · {{ trip_template.transport }}{% endif %}
+  </div>
+
+  {% with guide=trip_template.trip_list_q.0.guide_list_q.0 %}
+    {% if guide %}
+{#      <div style="position: absolute; top: calc(50% - 60px); left: 15px;">#}
+{#        {% url 'supplier_lk_guide_photo' cabinet_id guide.pk as photo_url %}#}
+{#        {% block guide_photo %}#}
+{#          {% include 'main/supplier_cabinet/s_guide_photo.html' with bg_color_css_class='bg-success-overlay' %}#}
+{#        {% endblock %}#}
+{#        <span style="position: relative; top: 30px;">{{ guide.name }}</span>#}
+{#      </div>#}
+    {% endif %}
+  {% endwith %}
+
+  <div class="p-t-30">
+    <h5 class="p-b-10 p-t-15">{{ trip_template.name }}</h5>
+
+    <div class="p-b-10">
+      {% for day_info in week_days_info|at:trip_template.pk %}
+        <span class="{% if day_info.exists %}bg-success txt-white{% else %}bg-gray{% endif %} p-t-5 p-b-5 m-r-5"
+            style="border-radius: 5px; padding-left: 5px; padding-right: 5px;">
+          {{ day_info.weekday_name }}
+        </span>
+      {% endfor %}
+    </div>
+
+    <div style="max-height: 50px; overflow: hidden;">
+      {{ trip_template.short_description|truncatechars:256 }}
+    </div>
+
+    {% if trip_template.description %}
+      <div class="p-t-10">
+        <a class="txt-success a-hover-fix js-description-popup" style="font-size: large;" href="#!"
+            data-text="{{ trip_template.description|linebreaksbr }}">
+          Подробное описание
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div style="position: absolute; top: 30vh; right: 15px;">
+    <h5 class="d-inline f-bold">{% if trip_template.min_price_q != trip_template.max_price_q %}от&nbsp;{% endif %}{{ trip_template.min_price_q|currency:0 }}&nbsp;₽</h5>
+  </div>
+{% endblock body_content %}
+
+{% block panel_footer %}
+  <div class="panel-footer rn-panel-footer-r-large bg-white" style="height: 75px; border-top: none;">
+    <div class="p-l-15 p-r-15">
+      <a class="btn btn-success w-100" href="{% block add_tourist_url %} {% url 'supplier_lk_add_tourist' cabinet_id trip_template.pk %} {% endblock %}">
+        <span style="font-size: x-large">ЗАКАЗАТЬ</span>
+      </a>
+    </div>
+  </div>
+{% endblock %}

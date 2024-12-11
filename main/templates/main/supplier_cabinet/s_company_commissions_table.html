@@ -1,0 +1,68 @@
+{% extends 'main/snippets/content/table/s_base_table.html' %}
+
+{% load pluralize_ru %}
+{% load format_extensions %}
+{% load math_extensions %}
+
+{% block search_panel %}
+  {% include 'main/supplier_cabinet/s_trips_table_search.html' %}
+{% endblock %}
+
+{% block headers %}
+  <th class="p-b-0 p-l-0" style="border-bottom-color: black; border-bottom-width: 0.1rem; font-size: large;" colspan="2">
+    <div>
+      <span class="p-r-15">ИТОГО</span>
+    </div>
+    <p class="f-18">
+      <span class="p-r-10">
+        {% include 'main/suppliers/s_suppliers_guests_count.html' with tourists_count=stat_finished.tourists_count %}
+        {% if stat_non_finished.tourists_count > 0 %}
+          <span class="text-muted" style="font-size: smaller;">(+{{ stat_non_finished.tourists_count }})</span>
+        {% endif %}
+      </span>
+      <span class="p-r-10">
+        <span>
+          Начислено:&nbsp;<b>{{ stat_finished.commission|currency:0 }}</b>&nbsp;₽
+        </span>
+        {% if stat_non_finished.commission > 0 %}
+          <span class="text-muted" style="font-size: smaller;">(+{{ stat_non_finished.commission|currency:0 }}&nbsp;₽)</span>
+        {% endif %}
+      </span>
+      <span class="txt-success">
+        Оплачено:&nbsp;<b>{{ stat_total.commission_paid|currency:0 }}</b>&nbsp;₽
+      </span>
+    </p>
+  </th>
+{% endblock %}
+
+{% block rows %}
+  {% for company in trip_companies %}
+    <tr>
+      <td>
+        <div class="col-sm-12 p-0">
+          <span class="f-bold f-16 p-r-10">{{ company.get_customer.full_name }}</span>
+          {% if company.tourists_count_q > 1 %}
+            {% include 'main/suppliers/s_suppliers_guests_count.html' with tourists_count=company.tourists_count_q %}
+          {% endif %}
+          <br>
+          <span class="f-italic">{{ company.trip }}</span>
+        </div>
+      </td>
+      <td class="text-nowrap text-right v-middle f-16">
+        <p>
+          Начислено:
+          <span class="f-bold">{{ company.commission_q|currency:0 }}</span>&nbsp;₽
+          {% if not company.trip.is_finished %}<br><span class="f-italic">(справочно)</span>{% endif %}
+        </p>
+        {% if company.commission_paid_q > 0 %}
+          <p class="txt-success">
+            Оплачено:
+            <span class="f-bold">{{ company.commission_paid_q|currency:0 }}</span>&nbsp;₽
+          </p>
+        {% endif %}
+      </td>
+    </tr>
+  {% empty %}
+    {% include 'main/snippets/content/table/s_empty_table_text.html' with non_filtered_text='Пока нет гостей' %}
+  {% endfor %}
+{% endblock rows %}

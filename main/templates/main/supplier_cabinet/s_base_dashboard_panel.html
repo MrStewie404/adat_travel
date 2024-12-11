@@ -1,0 +1,9 @@
+<div class="{% block panel_css_class %}panel {% block panel_color_class %}panel-success{% endblock panel_color_class %} rn-panel-r-large{% endblock panel_css_class %}"
+    style="{% block panel_style %}{% endblock %}">
+  {% block panel_body %}
+    <div class="{% block body_css_class %}panel-body rn-panel-footer-r-large{% endblock %}" style="{% block body_style %}{% endblock %}">
+      {% block body_content %}{% endblock %}
+    </div>
+  {% endblock panel_body %}
+  {% block panel_footer %}{% endblock %}
+</div>

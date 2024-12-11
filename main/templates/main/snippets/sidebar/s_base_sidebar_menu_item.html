@@ -1,0 +1,30 @@
+{% load default_if_undefined %}
+
+{% if nav_title %}
+  <li class="nav-level text-uppercase">
+    <div style="padding-left: 0; display: inline-block">
+      --- {{ nav_title }}</div>
+    <div style="float: right; display: inline-block; margin-right: 10px; margin-top: 2px">
+      <i class="{{ icon_class }}"></i>
+    </div>
+  </li>
+{% else %}
+  <li class="{% block item_css_class %} {% if item_id and item_id == active_sidebar_item %}active{% endif %} treeview {% endblock %} sidebar-mini ">
+    <a class="dropdown-item " style="padding-top: 0.4rem; padding-bottom: 0.4rem" href="{% include 'main/snippets/navbar/s_url_name_or_path.html' %}">
+      <i class="{{ icon_class }}"></i>
+      <span> {{ text }}</span>
+      <span>
+        {% block badges %}
+          {% include 'main/snippets/content/s_error_badge.html' with text=danger_badge_text title=danger_badge_title %}
+          {% include 'main/snippets/content/s_warning_badge.html' with text=warning_badge_text title=warning_badge_title %}
+        {% endblock %}
+      </span>
+      {% if has_children %}<i class="icon-arrow-down"></i>{% endif %}
+    </a>
+    {% if has_children %}
+      <ul class="treeview-menu {% if is_open %}menu-open{% endif %}">
+        {% block children_items %}{% endblock %}
+      </ul>
+    {% endif %}
+  </li>
+{% endif %}

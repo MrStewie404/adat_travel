@@ -1,0 +1,14 @@
+<ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+  <li class="breadcrumb-item">
+    <a href="{% if url_home %} {{ url_home }} {% else %} {% url 'index' %} {% endif %}">
+      <i class="icofont icofont-home"></i>
+    </a>
+  </li>
+
+  {% if 1_text or 1_url_name or 1_url_path %}{% include 'main/snippets/navbar/s_base_breadcrumb_item.html' with text=1_text url_name=1_url_name url_path=1_url_path %}{% endif %}
+  {% if 2_text or 2_url_name or 2_url_path %}{% include 'main/snippets/navbar/s_base_breadcrumb_item.html' with text=2_text url_name=2_url_name url_path=2_url_path %}{% endif %}
+  {% if 3_text or 3_url_name or 3_url_path %}{% include 'main/snippets/navbar/s_base_breadcrumb_item.html' with text=3_text url_name=3_url_name url_path=3_url_path %}{% endif %}
+  {% if 4_text or 4_url_name or 4_url_path %}{% include 'main/snippets/navbar/s_base_breadcrumb_item.html' with text=4_text url_name=4_url_name url_path=4_url_path %}{% endif %}
+  {% if 5_text or 5_url_name or 5_url_path %}{% include 'main/snippets/navbar/s_base_breadcrumb_item.html' with text=5_text url_name=5_url_name url_path=5_url_path %}{% endif %}
+  {% if 6_text or 6_url_name or 6_url_path %}{% include 'main/snippets/navbar/s_base_breadcrumb_item.html' with text=6_text url_name=6_url_name url_path=6_url_path %}{% endif %}
+</ol>

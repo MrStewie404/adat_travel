@@ -1,0 +1,14 @@
+{% with size=size|default:75 %}
+  <div class="d-inline-block v-middle">
+    <div class="img-circle{% if bg_color_css_class %} {{ bg_color_css_class }} {% else %} bg-info-darker{% endif %}"
+        style="position: relative; width: {{ size }}px; height: {{ size }}px;
+            {% if guide.image %}
+            background: url('{% if photo_url %} {{ photo_url }} {% else %} {% url 'worker_photo' guide.pk %} {% endif %}') no-repeat center;
+            background-size: contain;
+            {% endif %}"
+        title="{% if not guide.image %}Нет фотографии{% endif %}"
+        data-toggle="tooltip" data-placement="bottom">
+      {% if not guide.image %}<i class="icofont icofont-camera f-35 txt-white rn-center"></i>{% endif %}
+    </div>
+  </div>
+{% endwith %}

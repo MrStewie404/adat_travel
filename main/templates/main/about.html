@@ -1,0 +1,21 @@
+{% extends 'main/trips_base.html' %}
+
+{% block title %}Информация{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block content_breadcrumbs %}
+  {% include 'main/snippets/content/s_title_with_breadcrumbs.html' with page_title='Информация' %}
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid col-sm-12">
+    <div class="card">
+      <div class="card-block">
+        <p class="f-14">Автоматизация рутинных процессов Туристического агенства</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

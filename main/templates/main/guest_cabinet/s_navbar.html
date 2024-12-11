@@ -1,0 +1,7 @@
+{% extends 'main/supplier_cabinet/s_base_navbar.html' %}
+
+{% block navbar_content %}
+  {% url 'guest_lk_logo' cabinet_id as image_url_path %}
+  {% url 'guest_lk_dashboard' cabinet_id as index_url %}
+  {{ block.super }}
+{% endblock %}

@@ -1,0 +1,151 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "username": "test_team_lead",
+        "password": "pbkdf2_sha256$260000$y0R03WOSJUFN4PYCyaVHXB$AwjZVI6wHSENlJ0lIRn+bm0GGWP5tBWNgMak5Rga6AM=",
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "groups": [
+            [
+                "team_leaders"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "username": "test_sales_manager",
+        "password": "pbkdf2_sha256$260000$y0R03WOSJUFN4PYCyaVHXB$AwjZVI6wHSENlJ0lIRn+bm0GGWP5tBWNgMak5Rga6AM=",
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "groups": [
+            [
+                "sales_managers"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "username": "test_service_guide",
+        "password": "pbkdf2_sha256$260000$y0R03WOSJUFN4PYCyaVHXB$AwjZVI6wHSENlJ0lIRn+bm0GGWP5tBWNgMak5Rga6AM=",
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "groups": [
+            [
+                "service_guides"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "username": "test_trip_planner",
+        "password": "pbkdf2_sha256$260000$y0R03WOSJUFN4PYCyaVHXB$AwjZVI6wHSENlJ0lIRn+bm0GGWP5tBWNgMak5Rga6AM=",
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "groups": [
+            [
+                "trip_planners"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": ["АДАТ"],
+        "surname": "",
+        "name": "rn",
+        "middle_name": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": ["АДАТ"],
+        "surname": "",
+        "name": "test_admin",
+        "middle_name": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": ["АДАТ"],
+        "surname": "",
+        "name": "test_sales_manager",
+        "middle_name": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": ["АДАТ"],
+        "surname": "",
+        "name": "test_service_guide",
+        "middle_name": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": ["АДАТ"],
+        "surname": "",
+        "name": "test_trip_planner",
+        "middle_name": ""
+    }
+},
+{
+    "model": "main.agencyemployee",
+    "fields": {
+        "person_ptr": ["", "rn"],
+        "user": ["rn"],
+        "role": "ADMIN"
+    }
+},
+{
+    "model": "main.agencyemployee",
+    "fields": {
+        "person_ptr": ["", "test_admin"],
+        "user": ["test_admin"],
+        "role": "ADMIN"
+    }
+},
+{
+    "model": "main.agencyemployee",
+    "fields": {
+        "person_ptr": ["", "test_sales_manager"],
+        "user": ["test_sales_manager"],
+        "role": "MANAGER"
+    }
+},
+{
+    "model": "main.agencyemployee",
+    "fields": {
+        "person_ptr": ["", "test_service_guide"],
+        "user": ["test_service_guide"],
+        "role": "SERVICE_GUIDE"
+    }
+},
+{
+    "model": "main.agencyemployee",
+    "fields": {
+        "person_ptr": ["", "test_trip_planner"],
+        "user": ["test_trip_planner"],
+        "role": "TOUR_PLANNER"
+    }
+}
+]

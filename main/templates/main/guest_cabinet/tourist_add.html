@@ -1,0 +1,110 @@
+{% extends 'main/trips_base_form.html' %}
+
+{% load static %}
+
+{% load crispy_forms_filters %}
+{% load format_extensions %}
+
+{% block navbar_content %}
+  {% include 'main/guest_cabinet/s_navbar.html' %}
+{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block column_main_css %}col-sm-12 col-xl-6 offset-xl-3 col-lg-10 offset-lg-1 col-md-8 offset-md-2{% endblock %}
+
+{% block early_script_links %}
+  {% include 'main/guest_cabinet/s_yandex_metrics_counter.html' %}
+{% endblock %}
+
+{% block card_header_title %}
+  {% include 'main/snippets/content/s_card_header_title.html' with title=route.name %}
+{% endblock %}
+
+{% block form %} {% with swap_buttons=True %}{{ block.super }}{% endwith %} {% endblock %}
+
+{% block form_attrs %}data-get-trip-info-url="{% url 'guest_lk_get_trip_info' cabinet_id route.pk %}"{% endblock %}
+
+{% block form_content %}
+  <div class="form-row errors-notification">{{ form.non_field_errors }}</div>
+  <div class="row rn-form-row">
+    <div class="form-group rn-form-group col-xs-12">
+      {{ form.tourists_count|as_crispy_field }}
+    </div>
+  </div>
+  <div class="row rn-form-row">
+    <div class="form-group rn-form-group col-xs-12">
+      {{ valid_dates_info|json_script:'id_valid_dates_info' }}
+      {{ form.trip_date|as_crispy_field }}
+    </div>
+  </div>
+  <div id="id_form_part2" hidden>
+    {% if form.departure_point %}
+      <div id="id_departure_point_row" class="row rn-form-row">
+        <div class="form-group rn-form-group col-xs-12">
+          {{ form.departure_point|as_crispy_field }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.surname|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.name|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.middle_name|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.phone_number|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.email|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.has_children_pre7|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row p-b-5 p-t-15">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.agree_with_policies.errors }}
+        <div class="d-inline-block">{{ form.agree_with_policies }}</div>
+        <label for="{{ form.agree_with_policies.id_for_label }}" class="form-control-label d-inline p-l-5">
+          Я предоставляю согласие на обработку персональных данных, а также подтверждаю ознакомление и согласие с
+          <a href="{% url 'privacy_policy' cabinet_id %}" class="text-muted a-hover-fix">Политикой конфиденциальности</a> и
+          <a href="{% url 'public_offer' cabinet_id %}" class="text-muted a-hover-fix">Пользовательским соглашением</a>
+        </label>
+      </div>
+    </div>
+    {% include 'main/supplier_cabinet/s_trip_total_prices.html' %}
+  </div>
+{% endblock form_content %}
+
+{% block submit_btn_text %}
+  <div id="id_submit_text">Перейти к оплате</div>
+  <div id="id_submit_details" style="font-size: smaller;"></div>
+{% endblock %}
+
+{% block submit_button_extra_attrs %}disabled{% endblock %}
+
+{% block cancel_button %}{% endblock %}
+
+{% block button_list_css_class %}{{ block.super }} wide-button-list p-t-15{% endblock %}
+
+{% block script_links %}
+  {{ block.super }}
+  <script src="{% static 'pages/supplier_cabinet/tourist-add.js' %}"></script>
+{% endblock %}

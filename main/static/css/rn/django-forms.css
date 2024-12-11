@@ -1,0 +1,12 @@
+.errorlist {
+  color: #ff4444; /* text-danger-color */
+}
+
+.errors-notification {
+  color: #ff4444; /* text-danger-color */
+  font-size: 16px;
+}
+
+.helptext {
+  color: #4285f4; /* text-primary-color */
+}

@@ -1,0 +1,3123 @@
+[
+{
+    "model": "main.agency",
+    "fields": {
+        "name": "АДАТ",
+        "phone_number": "+7 (995) 333-04-75",
+        "email": "adat@mail.ru",
+        "website": "https://adat-travel.ru/"
+    }
+},
+{
+    "model": "main.couponlabel",
+    "pk": 1,
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Подарочный сертификат",
+        "label_type": "CERTIFICATE",
+        "description": ""
+    }
+},
+{
+    "model": "main.couponlabel",
+    "pk": 2,
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Промокод",
+        "label_type": "PROMO_CODE",
+        "description": ""
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Анапа",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Астрахань",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Волгоград",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Геленджик",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Гуниб",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Дербент",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Каспийск",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Кисловодск",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Краснодар",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Махачкала",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Москва",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Новороссийск",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Пятигорск",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Ростов-на-Дону",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Санкт-Петербург",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Сочи",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Гоор",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.city",
+    "fields": {
+        "name": "Хунзах",
+        "region": "",
+        "country": "Россия",
+        "lat": null,
+        "lon": null
+    }
+},
+{
+    "model": "main.hotel",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "name": "Абу-Даги",
+        "address": "",
+        "phone_number": "",
+        "email": "",
+        "website": "",
+        "lat": null,
+        "lon": null,
+        "room_facilities": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotel",
+    "fields": {
+        "city": [
+            "Гуниб"
+        ],
+        "name": "Орлиное гнездо",
+        "address": "",
+        "phone_number": "",
+        "email": "",
+        "website": "",
+        "lat": null,
+        "lon": null,
+        "room_facilities": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotel",
+    "fields": {
+        "city": [
+            "Дербент"
+        ],
+        "name": "Европа",
+        "address": "",
+        "phone_number": "",
+        "email": "",
+        "website": "",
+        "lat": null,
+        "lon": null,
+        "room_facilities": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": null,
+        "name": "Экскурсия",
+        "description": "Экскурсия",
+        "color": "#F57C00"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": null,
+        "name": "Питание",
+        "description": "Питание",
+        "color": "#F57C00"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": null,
+        "name": "Размещение",
+        "description": "Размещение в гостинице",
+        "color": "#F57C00"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": null,
+        "name": "Гид",
+        "description": "Услуги гида",
+        "color": "#F57C00"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": null,
+        "name": "Транспорт",
+        "description": "Транспорт",
+        "color": "#F57C00"
+    }
+},
+{
+    "model": "main.route",
+    "fields": {
+        "name": "Весенний Дагестан",
+        "description": "Программа супер!",
+        "is_archived": false,
+        "agency": [
+            "АДАТ"
+        ],
+        "duration_nights": 4
+    }
+},
+{
+    "model": "main.route",
+    "fields": {
+        "name": "Знакомство с Дагестаном",
+        "description": "А эта ещё лучше!",
+        "is_archived": false,
+        "agency": [
+            "АДАТ"
+        ],
+        "duration_nights": 4
+    }
+},
+{
+    "model": "main.trip",
+    "fields": {
+        "name": "Весенний Дагестан",
+        "description": "Программа супер!",
+        "is_archived": false,
+        "agency": [
+            "АДАТ"
+        ],
+        "route": [
+            "Весенний Дагестан"
+        ],
+        "route_name": "Весенний Дагестан",
+        "start_date": "2022-07-27",
+        "end_date": "2022-07-31",
+        "max_tourists_count": 20,
+        "state": "FORMED",
+        "price": "20900.00"
+    }
+},
+{
+    "model": "main.trip",
+    "fields": {
+        "name": "Знакомство с Дагестаном",
+        "description": "А эта ещё лучше!",
+        "is_archived": false,
+        "agency": [
+            "АДАТ"
+        ],
+        "route": [
+            "Знакомство с Дагестаном"
+        ],
+        "route_name": "Знакомство с Дагестаном",
+        "start_date": "2022-08-02",
+        "end_date": "2022-08-06",
+        "max_tourists_count": 10,
+        "state": "FORMING",
+        "price": "21900.00"
+    }
+},
+{
+    "model": "main.trip",
+    "fields": {
+        "name": "Весенний Дагестан",
+        "description": "Программа супер!",
+        "is_archived": false,
+        "agency": [
+            "АДАТ"
+        ],
+        "route": [
+            "Весенний Дагестан"
+        ],
+        "route_name": "Весенний Дагестан",
+        "start_date": "2022-08-12",
+        "end_date": "2022-08-16",
+        "max_tourists_count": 20,
+        "state": "FORMING",
+        "price": "20900.00"
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Абу-Даги"
+        ],
+        "name": "Двухместный номер с общей кроватью",
+        "room_type": "DOUBLE_BIG_BED",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 2,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Абу-Даги"
+        ],
+        "name": "Двухместный номер с раздельными кроватями",
+        "room_type": "DOUBLE_TWIN_BEDS",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 2,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Абу-Даги"
+        ],
+        "name": "Двухместный номер (возможно разделение кроватей)",
+        "room_type": "DOUBLE_UNIVERSAL",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 2,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Абу-Даги"
+        ],
+        "name": "Трёхместный номер, одна общая и диванчик",
+        "room_type": "TRIPLE_BIG_BED",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 3,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Орлиное гнездо"
+        ],
+        "name": "Двухместный полюкс с общей кроватью",
+        "room_type": "DOUBLE_BIG_BED",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 2,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Орлиное гнездо"
+        ],
+        "name": "Трёхместный номер с раздельными кроватями",
+        "room_type": "TRIPLE_THREE_BEDS",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 3,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Орлиное гнездо"
+        ],
+        "name": "Люкс с общей кроватью и диван",
+        "room_type": "TRIPLE_BIG_BED",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 3,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Европа"
+        ],
+        "name": "Двухместный номер с общей кроватью, есть возможность доп места",
+        "room_type": "DOUBLE_BIG_BED",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 3,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Европа"
+        ],
+        "name": "Двухместный номер (возможно разделение кроватей)",
+        "room_type": "DOUBLE_UNIVERSAL",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 2,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelroomtype",
+    "fields": {
+        "hotel": [
+            "Европа"
+        ],
+        "name": "Трехместный номер, одна общая и диванчик",
+        "room_type": "TRIPLE_BIG_BED",
+        "total_area": null,
+        "rooms_count": 1,
+        "min_adults_count": 1,
+        "max_adults_count": 3,
+        "max_children_count": null,
+        "price": null,
+        "price_single": null,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelprebooking",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "hotel": [
+            "Абу-Даги"
+        ],
+        "start_date": "2022-07-27",
+        "end_date": "2022-07-29",
+        "change_freeze_period": 10,
+        "comment": "На июль"
+    }
+},
+{
+    "model": "main.hotelprebooking",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "hotel": [
+            "Европа"
+        ],
+        "start_date": "2022-07-30",
+        "end_date": "2022-07-31",
+        "change_freeze_period": 10,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelprebooking",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "hotel": [
+            "Орлиное гнездо"
+        ],
+        "start_date": "2022-07-29",
+        "end_date": "2022-07-30",
+        "change_freeze_period": 10,
+        "comment": ""
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-27",
+            "Абу-Даги"
+        ],
+        "room_type": [
+            "Двухместный номер с общей кроватью",
+            "Абу-Даги"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-27",
+            "Абу-Даги"
+        ],
+        "room_type": [
+            "Двухместный номер с раздельными кроватями",
+            "Абу-Даги"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-27",
+            "Абу-Даги"
+        ],
+        "room_type": [
+            "Двухместный номер (возможно разделение кроватей)",
+            "Абу-Даги"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-27",
+            "Абу-Даги"
+        ],
+        "room_type": [
+            "Трёхместный номер, одна общая и диванчик",
+            "Абу-Даги"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-30",
+            "Европа"
+        ],
+        "room_type": [
+            "Двухместный номер с общей кроватью, есть возможность доп места",
+            "Европа"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-30",
+            "Европа"
+        ],
+        "room_type": [
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-30",
+            "Европа"
+        ],
+        "room_type": [
+            "Трехместный номер, одна общая и диванчик",
+            "Европа"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-29",
+            "Орлиное гнездо"
+        ],
+        "room_type": [
+            "Двухместный полюкс с общей кроватью",
+            "Орлиное гнездо"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-29",
+            "Орлиное гнездо"
+        ],
+        "room_type": [
+            "Трёхместный номер с раздельными кроватями",
+            "Орлиное гнездо"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.hotelprebookingandroom",
+    "fields": {
+        "hotel_pre_booking": [
+            "2022-07-29",
+            "Орлиное гнездо"
+        ],
+        "room_type": [
+            "Люкс с общей кроватью и диван",
+            "Орлиное гнездо"
+        ],
+        "count": 10
+    }
+},
+{
+    "model": "main.triphotelvisit",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "hotel": [
+            "Абу-Даги"
+        ],
+        "start_date": "2022-07-27",
+        "end_date": "2022-07-29",
+        "pre_bookings": [
+            [
+                "2022-07-27",
+                "Абу-Даги"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triphotelvisit",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "hotel": [
+            "Орлиное гнездо"
+        ],
+        "start_date": "2022-07-29",
+        "end_date": "2022-07-30",
+        "pre_bookings": [
+            [
+                "2022-07-29",
+                "Орлиное гнездо"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triphotelvisit",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "hotel": [
+            "Европа"
+        ],
+        "start_date": "2022-07-30",
+        "end_date": "2022-07-31",
+        "pre_bookings": [
+            [
+                "2022-07-30",
+                "Европа"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Гуниб"
+        ],
+        "day": 3,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Дербент"
+        ],
+        "day": 4,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 1,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 2,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Гуниб"
+        ],
+        "day": 3,
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Дербент"
+        ],
+        "day": 4,
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 1,
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 2,
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Гуниб"
+        ],
+        "day": 3,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-08-12"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Дербент"
+        ],
+        "day": 4,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-08-12"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 1,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-08-12"
+        ]
+    }
+},
+{
+    "model": "main.tripandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 2,
+        "trip": [
+            "Весенний Дагестан",
+            "2022-08-12"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 1,
+        "route": [
+            "Весенний Дагестан"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 2,
+        "route": [
+            "Весенний Дагестан"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Гуниб"
+        ],
+        "day": 3,
+        "route": [
+            "Весенний Дагестан"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Дербент"
+        ],
+        "day": 4,
+        "route": [
+            "Весенний Дагестан"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 1,
+        "route": [
+            "Знакомство с Дагестаном"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Махачкала"
+        ],
+        "day": 2,
+        "route": [
+            "Знакомство с Дагестаном"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Гуниб"
+        ],
+        "day": 3,
+        "route": [
+            "Знакомство с Дагестаном"
+        ]
+    }
+},
+{
+    "model": "main.routeandcity",
+    "fields": {
+        "city": [
+            "Дербент"
+        ],
+        "day": 4,
+        "route": [
+            "Знакомство с Дагестаном"
+        ]
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Иванов",
+        "name": "Иван",
+        "middle_name": "Иванович",
+        "sex": "M",
+        "date_birth": "1979-05-17",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Иванова",
+        "name": "Зинаида",
+        "middle_name": "Петровна",
+        "sex": "F",
+        "date_birth": "1979-03-15",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Иванова",
+        "name": "Мария",
+        "middle_name": "Ивановна",
+        "sex": "F",
+        "date_birth": "2000-07-05",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Петров",
+        "name": "Петр",
+        "middle_name": "Петрович",
+        "sex": "M",
+        "date_birth": "1985-09-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Петрова",
+        "name": "Александра",
+        "middle_name": "Петровна",
+        "sex": "F",
+        "date_birth": "1979-09-26",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Васильев",
+        "name": "Василий",
+        "middle_name": "Васильевич",
+        "sex": "M",
+        "date_birth": "1960-12-31",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Непомнящий",
+        "name": "Сигизмунд",
+        "middle_name": "Сигизмундович",
+        "sex": "M",
+        "date_birth": "1954-05-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Серебряков",
+        "name": "Александр",
+        "middle_name": "Владимирович",
+        "sex": "M",
+        "date_birth": "1963-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Серебрякова",
+        "name": "Елена",
+        "middle_name": "Андреевна",
+        "sex": "F",
+        "date_birth": "1994-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Серебрякова",
+        "name": "Софья",
+        "middle_name": "Александровна",
+        "sex": "F",
+        "date_birth": "1994-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Войницкая",
+        "name": "Мария",
+        "middle_name": "Васильевна",
+        "sex": "F",
+        "date_birth": "1943-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Войницкий",
+        "name": "Иван",
+        "middle_name": "Петрович",
+        "sex": "M",
+        "date_birth": "1968-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Астров",
+        "name": "Михаил",
+        "middle_name": "Львович",
+        "sex": "M",
+        "date_birth": "1970-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Телегин",
+        "name": "Илья",
+        "middle_name": "Ильич",
+        "sex": "M",
+        "date_birth": "1969-01-01",
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Баранкин",
+        "name": "Юра",
+        "middle_name": "",
+        "sex": "M",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "Петрова",
+        "name": "Света",
+        "middle_name": "",
+        "sex": "F",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "",
+        "name": "rn",
+        "middle_name": "",
+        "sex": "",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "",
+        "name": "adat_admin",
+        "middle_name": "",
+        "sex": "",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "",
+        "name": "test_sales_manager",
+        "middle_name": "",
+        "sex": "",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "",
+        "name": "test_service_guide",
+        "middle_name": "",
+        "sex": "",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "form_of_address": "",
+        "surname": "",
+        "name": "test_trip_planner",
+        "middle_name": "",
+        "sex": "",
+        "date_birth": null,
+        "place_birth": "",
+        "website": "",
+        "food_preferences": "",
+        "comment": ""
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Иванов",
+            "Иван"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Иванова",
+            "Зинаида"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Иванова",
+            "Мария"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Петров",
+            "Петр"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Петрова",
+            "Александра"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Васильев",
+            "Василий"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Непомнящий",
+            "Сигизмунд"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Серебряков",
+            "Александр"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Серебрякова",
+            "Елена"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Серебрякова",
+            "Софья"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Войницкая",
+            "Мария"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Войницкий",
+            "Иван"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Астров",
+            "Михаил"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.client",
+    "fields": {
+        "person": [
+            "Телегин",
+            "Илья"
+        ],
+        "responsible_person": null
+    }
+},
+{
+    "model": "main.tripworker",
+    "fields": {
+        "person": [
+            "Баранкин",
+            "Юра"
+        ],
+        "role": "DRIVER"
+    }
+},
+{
+    "model": "main.tripworker",
+    "fields": {
+        "person": [
+            "Петрова",
+            "Света"
+        ],
+        "role": "GUIDE"
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Ивановы",
+        "desired_room_type": "TRIPLE",
+        "tourists": [
+            [
+                "Иванов",
+                "Иван"
+            ],
+            [
+                "Иванова",
+                "Зинаида"
+            ],
+            [
+                "Иванова",
+                "Мария"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Петровы",
+        "desired_room_type": "DOUBLE_BIG_BED",
+        "tourists": [
+            [
+                "Петров",
+                "Петр"
+            ],
+            [
+                "Петрова",
+                "Александра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Васильев",
+        "desired_room_type": "SINGLE",
+        "tourists": [
+            [
+                "Васильев",
+                "Василий"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Непомнящий",
+        "desired_room_type": "SINGLE_WITH_SHARING",
+        "tourists": [
+            [
+                "Непомнящий",
+                "Сигизмунд"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Серебряковы",
+        "desired_room_type": "TRIPLE",
+        "tourists": [
+            [
+                "Серебряков",
+                "Александр"
+            ],
+            [
+                "Серебрякова",
+                "Елена"
+            ],
+            [
+                "Серебрякова",
+                "Софья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Войницкие",
+        "desired_room_type": "DOUBLE_TWIN_BEDS",
+        "tourists": [
+            [
+                "Войницкая",
+                "Мария"
+            ],
+            [
+                "Войницкий",
+                "Иван"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Астров",
+        "desired_room_type": "SINGLE_WITH_SHARING",
+        "tourists": [
+            [
+                "Астров",
+                "Михаил"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "name": "Телегин",
+        "desired_room_type": "SINGLE",
+        "tourists": [
+            [
+                "Телегин",
+                "Илья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "name": "Ивановы",
+        "desired_room_type": "QUAD",
+        "tourists": [
+            [
+                "Иванов",
+                "Иван"
+            ],
+            [
+                "Иванова",
+                "Зинаида"
+            ],
+            [
+                "Иванова",
+                "Мария"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "name": "Петровы",
+        "desired_room_type": "DOUBLE_BIG_BED",
+        "tourists": [
+            [
+                "Петров",
+                "Петр"
+            ],
+            [
+                "Петрова",
+                "Александра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripcompany",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "name": "Васильев",
+        "desired_room_type": "SINGLE",
+        "tourists": [
+            [
+                "Васильев",
+                "Василий"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroommatesgroup",
+    "fields": {
+        "name": "Баранкин и Ко 1",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "is_room_needed": true,
+        "roommates": [
+            [
+                "Баранкин",
+                "Юра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroommatesgroup",
+    "fields": {
+        "name": "Петрова и Ко 1",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "is_room_needed": true,
+        "roommates": [
+            [
+                "Петрова",
+                "Света"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroommatesgroup",
+    "fields": {
+        "name": "Баранкин и Ко 2",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "is_room_needed": true,
+        "roommates": [
+            [
+                "Баранкин",
+                "Юра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroommatesgroup",
+    "fields": {
+        "name": "Петрова и Ко 2",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "is_room_needed": true,
+        "roommates": [
+            [
+                "Петрова",
+                "Света"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroommatesgroup",
+    "fields": {
+        "name": "Баранкин и Ко 3",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "is_room_needed": true,
+        "roommates": [
+            [
+                "Баранкин",
+                "Юра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroommatesgroup",
+    "fields": {
+        "name": "Петрова и Ко 3",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "is_room_needed": true,
+        "roommates": [
+            [
+                "Петрова",
+                "Света"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroomreservation",
+    "fields": {
+        "room_number": 6,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Петрова",
+            "Света"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер с раздельными кроватями",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroomreservation",
+    "fields": {
+        "room_number": 7,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Баранкин",
+            "Юра"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер с раздельными кроватями",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroomreservation",
+    "fields": {
+        "room_number": 2,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Петрова",
+            "Света"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Двухместный полюкс с общей кроватью",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroomreservation",
+    "fields": {
+        "room_number": 3,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Баранкин",
+            "Юра"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Двухместный полюкс с общей кроватью",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroomreservation",
+    "fields": {
+        "room_number": 7,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Петрова",
+            "Света"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.tripworkerroomreservation",
+    "fields": {
+        "room_number": 8,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Баранкин",
+            "Юра"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Васильев-Непомнящий",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Васильев",
+                "Василий"
+            ],
+            [
+                "Непомнящий",
+                "Сигизмунд"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Васильев-Непомнящий",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Васильев",
+                "Василий"
+            ],
+            [
+                "Непомнящий",
+                "Сигизмунд"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Астров-Телегин",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Астров",
+                "Михаил"
+            ],
+            [
+                "Телегин",
+                "Илья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Васильев-Непомнящий",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Васильев",
+                "Василий"
+            ],
+            [
+                "Непомнящий",
+                "Сигизмунд"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Ивановы",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Иванов",
+                "Иван"
+            ],
+            [
+                "Иванова",
+                "Зинаида"
+            ],
+            [
+                "Иванова",
+                "Мария"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Петровы",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Петров",
+                "Петр"
+            ],
+            [
+                "Петрова",
+                "Александра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Серебряковы",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Серебряков",
+                "Александр"
+            ],
+            [
+                "Серебрякова",
+                "Елена"
+            ],
+            [
+                "Серебрякова",
+                "Софья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Войницкие",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Войницкая",
+                "Мария"
+            ],
+            [
+                "Войницкий",
+                "Иван"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Астров",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Астров",
+                "Михаил"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Телегин",
+        "trip_hotel_visit": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Телегин",
+                "Илья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Ивановы",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Иванов",
+                "Иван"
+            ],
+            [
+                "Иванова",
+                "Зинаида"
+            ],
+            [
+                "Иванова",
+                "Мария"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Петровы",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Петров",
+                "Петр"
+            ],
+            [
+                "Петрова",
+                "Александра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Серебряковы",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Серебряков",
+                "Александр"
+            ],
+            [
+                "Серебрякова",
+                "Елена"
+            ],
+            [
+                "Серебрякова",
+                "Софья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Войницкие",
+        "trip_hotel_visit": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Войницкая",
+                "Мария"
+            ],
+            [
+                "Войницкий",
+                "Иван"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Ивановы",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Иванов",
+                "Иван"
+            ],
+            [
+                "Иванова",
+                "Зинаида"
+            ],
+            [
+                "Иванова",
+                "Мария"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Петровы",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Петров",
+                "Петр"
+            ],
+            [
+                "Петрова",
+                "Александра"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Серебряковы",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Серебряков",
+                "Александр"
+            ],
+            [
+                "Серебрякова",
+                "Елена"
+            ],
+            [
+                "Серебрякова",
+                "Софья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Войницкие",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Войницкая",
+                "Мария"
+            ],
+            [
+                "Войницкий",
+                "Иван"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Астров",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Астров",
+                "Михаил"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproommatesgroup",
+    "fields": {
+        "name": "Телегин",
+        "trip_hotel_visit": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "roommates": [
+            [
+                "Телегин",
+                "Илья"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 1,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Петров",
+            "Петр"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер с общей кроватью",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 2,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Васильев",
+            "Василий"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер с раздельными кроватями",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 3,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Астров",
+            "Михаил"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер с раздельными кроватями",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 5,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Телегин",
+            "Илья"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер с раздельными кроватями",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 6,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Войницкая",
+            "Мария"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 7,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Иванов",
+            "Иван"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Трёхместный номер, одна общая и диванчик",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 8,
+        "roommates_group": [
+            "2022-07-27",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Серебряков",
+            "Александр"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-27",
+            "Трёхместный номер, одна общая и диванчик",
+            "Абу-Даги"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 1,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Петров",
+            "Петр"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Двухместный полюкс с общей кроватью",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 2,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Васильев",
+            "Василий"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Трёхместный номер с раздельными кроватями",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 3,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Серебряков",
+            "Александр"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Трёхместный номер с раздельными кроватями",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 4,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Войницкая",
+            "Мария"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Трёхместный номер с раздельными кроватями",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 5,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Астров",
+            "Михаил"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Трёхместный номер с раздельными кроватями",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 6,
+        "roommates_group": [
+            "2022-07-29",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Иванов",
+            "Иван"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-29",
+            "Люкс с общей кроватью и диван",
+            "Орлиное гнездо"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 1,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Петров",
+            "Петр"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер с общей кроватью, есть возможность доп места",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 3,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Васильев",
+            "Василий"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 4,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Войницкая",
+            "Мария"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 5,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Астров",
+            "Михаил"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 6,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Телегин",
+            "Илья"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Двухместный номер (возможно разделение кроватей)",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 7,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Иванов",
+            "Иван"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Трехместный номер, одна общая и диванчик",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.triproomreservation",
+    "fields": {
+        "room_number": 8,
+        "roommates_group": [
+            "2022-07-30",
+            "Весенний Дагестан",
+            "2022-07-27",
+            "Серебряков",
+            "Александр"
+        ],
+        "hotel_pre_booking_and_room": [
+            "2022-07-30",
+            "Трехместный номер, одна общая и диванчик",
+            "Европа"
+        ]
+    }
+},
+{
+    "model": "main.tripandtripworker",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "worker": [
+            "Петрова",
+            "Света"
+        ]
+    }
+},
+{
+    "model": "main.tripandtripworker",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "worker": [
+            "Баранкин",
+            "Юра"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Иванов",
+            "Иван"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Иванова",
+            "Зинаида"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Иванова",
+            "Мария"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Петров",
+            "Петр"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Петрова",
+            "Александра"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Васильев",
+            "Василий"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Непомнящий",
+            "Сигизмунд"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Серебряков",
+            "Александр"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Серебрякова",
+            "Елена"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Серебрякова",
+            "Софья"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Войницкая",
+            "Мария"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Войницкий",
+            "Иван"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Астров",
+            "Михаил"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Весенний Дагестан",
+            "2022-07-27"
+        ],
+        "client": [
+            "Телегин",
+            "Илья"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "client": [
+            "Иванов",
+            "Иван"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "client": [
+            "Иванова",
+            "Зинаида"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "client": [
+            "Иванова",
+            "Мария"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "client": [
+            "Петров",
+            "Петр"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "client": [
+            "Петрова",
+            "Александра"
+        ]
+    }
+},
+{
+    "model": "main.tripandclient",
+    "fields": {
+        "trip": [
+            "Знакомство с Дагестаном",
+            "2022-08-02"
+        ],
+        "client": [
+            "Васильев",
+            "Василий"
+        ]
+    }
+}
+]

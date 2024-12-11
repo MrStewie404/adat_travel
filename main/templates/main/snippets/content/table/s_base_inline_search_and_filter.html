@@ -1,0 +1,16 @@
+{% extends 'main/snippets/content/table/s_base_inline_search.html' %}
+
+{% block form_content %}
+  {{ block.super }}
+  <div class="f-right d-inline-block" style="margin-top: -10px; margin-bottom: 5px; margin-right: -10px;">
+    <div class="dropdown dropdown-no-arrow">
+      <a href="#!" id="dropdown_filter1" data-toggle="dropdown-filter" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Фильтры">
+        <i class="f-35 icofont icofont-settings"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right dropdown-filter-menu" aria-labelledby="dropdown_filter1"
+          data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" style="width: 250px;">
+        {% block filter_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

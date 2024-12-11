@@ -1,0 +1,11 @@
+{% load static %}
+
+{% if supplier.agency.yandex_metrics_id %}
+  {% with yandex_metrics_id=supplier.agency.yandex_metrics_id %}
+    <!-- Yandex.Metrika counter -->
+    {{ yandex_metrics_id|json_script:"yandex-metrics-id" }}
+    <script async src="{% static 'js/rn/yandex-metrics.js' %}"></script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/{{ yandex_metrics_id }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  {% endwith %}
+{% endif %}

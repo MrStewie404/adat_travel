@@ -1,0 +1,9 @@
+{% extends 'main/supplier_cabinet/s_base_dashboard_panel.html' %}
+
+{% block body_css_class %}{{ block.super }} p-0{% endblock %}
+
+{% block body_content %}
+  <div class="panels-wells">
+    {% include 'main/supplier_cabinet/s_dashboard_summary_inner_panel.html' with show_heading=True %}
+  </div>
+{% endblock %}

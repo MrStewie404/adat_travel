@@ -1,0 +1,27 @@
+{% extends 'main/trips_base.html' %}
+
+{% block navbar_content %}
+  {% include 'main/supplier_cabinet/s_navbar.html' %}
+{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block column_main_css %}col-lg-12 col-xl-8 offset-xl-2{% endblock %}
+
+{% block content_breadcrumbs %}
+  {% url 'supplier_lk_dashboard' cabinet_id as url_home %}
+  {% include 'main/snippets/content/s_title_with_breadcrumbs.html' with 1_text=page_title %}
+{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-block">
+      <h5>
+        Не удалось найти такой тур или экскурсию. Возможно, свободные места уже закончились.
+        Пожалуйста, свяжитесь с менеджером или подберите другой тур.
+      </h5>
+    </div>
+  </div>
+{% endblock %}

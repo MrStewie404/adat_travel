@@ -1,0 +1,113 @@
+{% extends 'main/trips_base_form.html' %}
+
+{% load static %}
+{% load crispy_forms_filters %}
+{% load format_extensions %}
+
+{% block navbar_content %}
+  {% include 'main/supplier_cabinet/s_navbar.html' %}
+{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block column_main_css %}col-sm-12 col-xl-6 offset-xl-3 col-lg-10 offset-lg-1 col-md-8 offset-md-2{% endblock %}
+
+{% block content_breadcrumbs %}
+  {% url 'supplier_lk_dashboard' cabinet_id as url_home %}
+  {% include 'main/snippets/content/s_title_with_breadcrumbs.html' with 1_text=page_title %}
+{% endblock %}
+
+{% block card_header_title %}
+  {% include 'main/snippets/content/s_card_header_title.html' with title=route.name %}
+{% endblock %}
+
+{% block form %} {% with swap_buttons=True %}{{ block.super }}{% endwith %} {% endblock %}
+
+{% block form_attrs %}data-get-trip-info-url="{% url 'supplier_lk_get_trip_info' cabinet_id route.pk %}"{% endblock %}
+
+{% block form_content %}
+  {% if show_prev_tourist_link %}
+    <a class="label bg-white label-inverse-primary badge-inverse-primary" href="{% url 'supplier_lk_add_prev_tourist' cabinet_id route.pk %}?{{ request.GET.urlencode }}">
+      Использовать ранее отправленную анкету
+    </a>
+  {% endif %}
+  <div class="form-row errors-notification">{{ form.non_field_errors }}</div>
+  <div class="row rn-form-row">
+    <div class="form-group rn-form-group col-xs-12">
+      {{ form.tourists_count|as_crispy_field }}
+    </div>
+  </div>
+  <div class="row rn-form-row">
+    <div class="form-group rn-form-group col-xs-12">
+      {{ valid_dates_info|json_script:'id_valid_dates_info' }}
+      {{ form.trip_date|as_crispy_field }}
+    </div>
+  </div>
+  <div id="id_form_part2" hidden>
+    {% if form.departure_point %}
+      <div id="id_departure_point_row" class="row rn-form-row">
+        <div class="form-group rn-form-group col-xs-12">
+          {{ form.departure_point|as_crispy_field }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.surname|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.name|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.middle_name|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.phone_number|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row rn-form-row">
+      <div class="form-group rn-form-group col-xs-12">
+        {{ form.email|as_crispy_field }}
+      </div>
+    </div>
+    <div class="m-b-15">
+      <div class="row rn-form-row">
+        <div class="form-group rn-form-group col-xs-12">
+          {{ form.supplier_commission|as_crispy_field }}
+        </div>
+      </div>
+      <div class="row rn-form-row">
+        <div class="form-group rn-form-group col-xs-12">
+          {{ form.is_commission_paid|as_crispy_field }}
+        </div>
+      </div>
+      <div class="row rn-form-row">
+        <div class="form-group rn-form-group col-xs-12">
+          {{ form.has_children_pre7|as_crispy_field }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock form_content %}
+
+{% block submit_btn_text %}Оформить{% endblock %}
+
+{% block submit_button_extra_attrs %}disabled{% endblock %}
+
+{% block cancel_button %}{% endblock %}
+
+{% block button_list_css_class %}{{ block.super }} wide-button-list{% endblock %}
+
+{% block script_links %}
+  {{ block.super }}
+  <script src="{% static 'pages/supplier_cabinet/tourist-add.js' %}"></script>
+{% endblock %}

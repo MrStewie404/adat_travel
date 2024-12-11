@@ -1,0 +1,15 @@
+{% extends 'main/supplier_cabinet/s_base_dashboard_panel.html' %}
+
+{% block heading_content %}Экскурсии на завтра{% endblock %}
+
+{% block body_content %}
+  {% include 'main/supplier_cabinet/s_future_trips_table.html' with trips=nearest_excursions %}
+  <div class="p-l-25 p-r-25 text-center">
+    <a class="btn btn-success w-100" href="{% url 'supplier_lk_excursions' cabinet_id %}">
+      Все экскурсии
+    </a>
+
+    {% comment %} Убрать в отдельный файл, поскольку унаследовано из файла s_dashboard_summary_inner_panel.html {% endcomment %}
+    <a class="btn btn-success w-100" href="{{ guest_link_url }}">Туры и экскурсии</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+<tr>
+  <td colspan="100%">
+    {% if is_filtered %}
+      {% if filtered_text %}{{ filtered_text }}{% else %}Ничего не нашлось по Вашему поисковому запросу{% endif %}
+    {% else %}
+      {% if non_filtered_text %}{{ non_filtered_text }}{% else %}Здесь пока что ничего нет{% endif %}
+    {% endif %}
+  </td>
+</tr>

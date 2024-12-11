@@ -1,0 +1,66 @@
+{% extends 'main/snippets/content/table/s_base_table.html' %}
+
+{% load format_extensions %}
+
+{% block search_panel %}
+  {% include 'main/supplier_cabinet/s_trips_table_search.html' %}
+{% endblock %}
+
+{% block rows %}
+  {% regroup trips by start_date.year as trips_by_year %}
+  {% for year, trips in trips_by_year %}
+    {% regroup trips by start_date.month as trips_by_month %}
+    {% cycle "#f57c00" "#06DEC0" as date_color silent %}
+    {% for month, trips in trips_by_month %}
+      {% if show_dates and trips.0 %}
+        <th class="text-nowrap p-0 ">
+          <div class="d-block align-items-center justify-content-center text-center">
+            <div class="text-uppercase" href=''>
+              <p class="rn-year-font" style="font-size: 23px; font-weight: 600;">
+                <i style="color: #1B8BF9;" class="icofont icofont-calendar"></i>
+              </p>
+            </div>
+          </div>
+        </th>
+        <th class="text-nowrap p-0" style="vertical-align: middle;" colspan="2">
+          <div class="d-block">
+            <div class="text-uppercase" href=''>
+              <p class="rn-year-font" style="font-size:23px; font-weight: 600;">&nbsp;{{ trips.0.start_date|date:"F Y" }}&nbsp;
+              </p>
+            </div>
+          </div>
+        </th>
+      {% endif %}
+      {% for trip in trips %}
+        <tr>
+          {% if show_dates %}
+            <td class="v-middle">
+              {% include 'main/trips/trip_list/s_trip_dates_in_table.html' %}
+            </td>
+          {% endif %}
+          {# Колонка1: Название #}
+          <td class="w-100 v-middle">
+            {% block trip_column_content %}
+              <span style="font-size: large; font-weight: bold;">{{ trip.name }}</span>
+              {% include 'main/snippets/content/s_info_icon.html' with title=trip.description %}
+              <br>
+              {% include 'main/supplier_cabinet/s_guests_count_widget.html' %}
+              <span style="width: 1.5rem">&nbsp;</span>
+              {% include 'main/trips/excursion_list/s_price.html' %}
+            {% endblock %}
+          </td>
+          {# Колонка2: Действия #}
+          <td class="p-r-0 p-l-0 v-middle">
+            {% block actions_column_content %}
+              <a href="{% url 'supplier_lk_add_tourist' cabinet_id trip.route.pk %}?prev={{ request.get_full_path|urlencode }}&tomorrow=true" title="Добавить гостя">
+                <i class="icofont icofont-plus txt-success" style="font-size: 1.5rem;"></i>
+              </a>
+            {% endblock %}
+          </td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  {% empty %}
+    {% include 'main/snippets/content/table/s_empty_table_text.html' with non_filtered_text='Нет информации о предстоящих турах' %}
+  {% endfor %}
+{% endblock rows %}

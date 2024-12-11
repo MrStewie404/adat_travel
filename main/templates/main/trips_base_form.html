@@ -1,0 +1,51 @@
+{% extends 'main/trips_base.html' %}
+
+{% block column_main_css %}col-sm-12 col-md-12 offset-md-0 col-xl-8 offset-xl-2{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="{% block content_col_css_class %}col-sm-12{% endblock %}">
+      <div class="card">
+        {% block card_header_title %}{% endblock %}
+        <div class="card-block">
+          {% if show_errors_notification and form.errors %}
+            <p class="errors-notification">Пожалуйста, исправьте ошибки во введённых данных.</p>
+          {% endif %}
+          {% block form %}
+            <form {% block form_attrs %}{% endblock %} method="post" class="js-form-submit-once">
+              {% csrf_token %}
+              {% block form_content %}
+                <table class="table table-borderless"{% if table_fixed %} style="table-layout: fixed;"{% endif %}>
+                  {{ form.as_table }}
+                </table>
+              {% endblock %}
+              <div class="{% block button_list_css_class %}button-list{% endblock %}">
+                {% with button_types=swap_buttons|yesno:'cancel submit,submit cancel' %}
+                  {% for button in button_types.split %}
+                    {% if button == 'submit' %}
+                      {% block submit_button %}
+                        <button type="submit" name="{{ submit_btn_name }}"
+                            class="{% block submit_btn_css_class %}btn btn-success{% endblock %}"
+                            {% block submit_button_extra_attrs %}{% endblock %}>
+                          {% block submit_btn_text %}Сохранить{% endblock %}
+                        </button>
+                      {% endblock %}
+                    {% elif button == 'cancel' %}
+                      {% block cancel_button %}
+                        <button type="button"
+                            class="{% block cancel_btn_css_class %}btn btn-secondary js-cancel-btn{% endblock %}"
+                            data-on-cancel-url="{{ on_cancel_url }}">
+                          {% block cancel_btn_text %}Отмена{% endblock %}
+                        </button>
+                      {% endblock %}
+                    {% endif %}
+                  {% endfor %}
+                {% endwith %}
+              </div>
+            </form>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

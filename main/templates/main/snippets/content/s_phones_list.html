@@ -1,0 +1,11 @@
+{% with count=phone_models|length %}
+  {% for phone_model in phone_models %}
+    <li class="{% if inline %}d-inline{% endif %}">
+      <i class="icofont icofont-phone"></i>
+      <a href="tel:{{ phone_model.phone_number }}">{{ phone_model.phone_number }}</a>
+      {% if count > 1 %}
+        <span class="txt-muted" style="font-size: smaller">&nbsp;{{ phone_model.get_phone_type_display|lower }}</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+{% endwith %}

@@ -1,0 +1,10 @@
+{% extends 'main/supplier_cabinet/s_future_trip_panel.html' %}
+
+{% block add_tourist_url %} {% url 'guest_lk_add_tourist' cabinet_id trip_template.pk %} {% endblock %}
+
+{% block route_photo_url %} {% url "guest_lk_route_photo" cabinet_id trip_template.pk %} {% endblock %}
+
+{% block guide_photo %}
+  {% url 'guest_lk_guide_photo' cabinet_id guide.pk as photo_url %}
+  {{ block.super }}
+{% endblock %}

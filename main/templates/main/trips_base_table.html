@@ -1,0 +1,23 @@
+{% extends 'main/trips_base_with_old_table_scripts.html' %}
+
+{% load static %}
+
+{% block style_links %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/rn/tour_list.css' %}">
+{% endblock style_links %}
+
+{% block content %}
+  <div class="row">
+    <div class="{% block content_col_css_class %}col-xl-9 col-lg-10 col-sm-12{% endblock %}">
+      <div class="card">
+        {% block card_header_title %}{% endblock %}
+        <div class="card-block">
+          {% block table %}
+            {% include 'main/snippets/content/table_view_snippet.html' %}
+          {% endblock table %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,7 @@
+<li class="hidden-xs-down{% if active == url %} active{% endif %}">
+  <a href="{% url url %}">
+    <i class="{{ icon_class }} hidden-lg-up" title="{{ name }}"></i>
+    <span class="{% if icon_class %}hidden-md-down{% endif %}">{{ name }}</span>
+    {% include 'main/snippets/content/s_warning_badge.html' with text=warning_badge_text title=warning_badge_title %}
+  </a>
+</li>

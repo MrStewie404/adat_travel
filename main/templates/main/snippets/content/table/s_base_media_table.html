@@ -1,0 +1,48 @@
+{# Этот шаблон рисует таблицу медиафайлов; на входе должна быть переменная files #}
+
+{% extends 'main/snippets/content/table/s_base_table.html' %}
+
+{% block card_top %}
+  {% include 'main/snippets/content/s_card_header_title.html' with title='Медиафайлы' %}
+  {{ block.super }}
+{% endblock card_top %}
+
+{% block headers %}
+  <th>ОПИСАНИЕ</th>
+  <th>ФАЙЛ</th>
+{% endblock headers %}
+
+{% block rows %}
+  {% for media in files %}
+    <tr>
+      {# Колонка1: Описание #}
+      <td>
+        {% with description=media.description|default:'(Нет описания)' %}
+          {% if media.is_valid_image %}
+            <a class="rn-tour-name" href="{% block image_serve_url %}#{% endblock %}" data-lightbox="images" data-toggle="lightbox" data-title="{{ media.description }}" data-alt="Не удалось загрузить изображение">
+              {{ description }}
+            </a>
+          {% else %}
+            {{ description }}
+          {% endif %}
+        {% endwith %}
+      </td>
+      {# Колонка2: Файл #}
+      <td>
+        <div class="d-inline-block">
+          <form method="post" action="{% block media_download_url %}{% endblock %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-link">{{ media.original_file_name }}</button>
+          </form>
+        </div>
+        {% if not hide_delete_button %}
+          <a class="d-inline-block" href="{% block media_delete_url %}{% endblock %}" title="Удалить">
+            <i class="icofont icofont-bin txt-danger"></i>
+          </a>
+        {% endif %}
+      </td>
+    </tr>
+  {% empty %}
+    {% include 'main/snippets/content/table/s_empty_table_text.html' with non_filtered_text='Нет медиа' only %}
+  {% endfor %}
+{% endblock rows %}

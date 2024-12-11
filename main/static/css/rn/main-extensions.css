@@ -1,0 +1,318 @@
+.main-header-top-fix {
+  max-height: 100px !important;
+}
+
+.main-header-top-fix > .navbar {
+  max-height: 100px !important;
+}
+
+@media (max-width: 767px) {
+  .main-header-top-fix .logo {
+    width: 185px;
+    float: left;
+  }
+
+  .fixed .content-wrapper {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 667px) {
+  .hidden-xs-down {
+    display: none !important;
+  }
+}
+
+@media (max-width: 230px) {
+  .main-header-top-fix .logo {
+    width: calc(100% - 50px);
+    box-sizing:border-box;
+    float: none;
+  }
+}
+
+@media (max-width: 539px) {
+  .main-header {
+    margin-top: 0px !important;
+  }
+}
+
+.main-header-top .navbar .top-nav > .active > a {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-header-top .navbar .top-nav > li > a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-checkbox {
+  float: left;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.custom-checkbox-crispy {
+  margin-left: auto;
+}
+
+.table-warning-custom,
+.table-warning-custom > th,
+.table-warning-custom > td {
+  background-color: #fad7a0;
+}
+
+.table-hover .table-warning-custom:hover {
+  background-color: #f8c471;
+}
+
+.table-hover .table-warning-custom:hover > td,
+.table-hover .table-warning-custom:hover > th {
+  background-color: #f8c471;
+}
+
+/* Залипуха для меню, чтобы кликалось в любом месте, а не только над текстом */
+.settings-menu > li {
+  margin: 0;
+  padding: 0;
+}
+
+.settings-menu > li > a {
+  padding: 7px 20px 7px 20px;
+  display: block;
+}
+
+.table-borderless td, .table-borderless th {
+  border: none;
+}
+
+/* Залипухи для календарей, чтобы они не перекрывались navbar-ом */
+.datepicker {
+  z-index: 1050 !important;
+}
+
+.daterangepicker {
+  z-index: 1050 !important;
+}
+
+.bootbox-select-height-lg .bootbox-input-select {
+  min-height: 300px;
+}
+
+.rn-select-height-lg {
+  min-height: 300px;
+}
+
+.rn-select-height-xl {
+  min-height: 600px;
+}
+
+.select2 {
+  font-size: 14px;
+}
+
+.select2-dropdown {
+  font-size: 14px;
+}
+
+.select2-container--bootstrap4 .select2-dropdown .select2-results__option[aria-selected="true"]:is(:not(.select2-results__option--highlighted)) {
+  background-color: #d5d8dc;
+}
+
+.select2-container .select2-results__option.hidden-option {
+  display: none;
+}
+
+.rn-select2-increased-height .select2-results > .select2-results__options {
+  max-height: 450px;
+}
+
+.rn-select2-increased-height .select2-results__option {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.rn-select2-increased-height .select2-results__group {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.rn-select2-increased-height .select2-search__field {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.rn-color-select2-dropdown li {
+  display: inline !important;
+  padding: 0;
+}
+
+.rn-color-select2-dropdown {
+  width: 240px !important;
+}
+
+.rn-panel-block-title {
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
+.rn-panel-block {
+  padding: 1rem 1rem;
+}
+
+.rn-panel-block-compact {
+  padding: 5px 1rem;
+}
+
+.rn-panel-r-large {
+  border-radius: 15px;
+}
+
+.rn-panel-heading-r-large {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.rn-panel-footer-r-large {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.rn-sub-panel {
+  background-color: #FFFFFF;
+}
+
+.panels-wells .rn-sub-panel .panel-body {
+  padding: 15px;
+}
+
+.invalid-feedback {
+  color: #ff5252;
+}
+
+.rn-search-input {
+  max-width: 400px;
+  width: 83%; /* При 80% текст подсказки обрезается, а при 85% не влезает кнопка поиска. Такая вот петрушка... */
+  height: 28px;
+  display: inline-block !important;
+}
+
+.rn-dimmed {
+  position: relative;
+}
+
+.rn-dimmed:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.dropdown-no-arrow > .dropdown-toggle:after {
+  content: initial;
+}
+
+.dropdown-no-arrow > .dropdown-toggle i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.rn-form-row {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-bottom: 0 !important;
+}
+
+.rn-form-group {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 0 !important;
+}
+
+.tooltip-inner {
+  white-space: pre-wrap;
+}
+
+.rn-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.compact-logo {
+  max-width: 150px;
+}
+
+.compact-logo .able-logo {
+  margin-right: 0;
+}
+
+.image-overlay-label {
+  color: #FFFFFF;
+  position: relative;
+  top: -25px;
+  background-color: rgba(83, 143, 153, 0.8);
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.bg-teal-overlay {
+  background-color: rgba(83, 143, 153, 0.8) !important;
+}
+
+.bg-success-overlay {
+  background-color: rgba(76, 162, 80, 0.8) !important;
+}
+
+.bg-teal {
+  background-color: #538F99;
+}
+
+.bg-info-darker {
+  background-color: #85c1e9;
+}
+
+.panel-teal {
+  background-color: #538F99;
+}
+
+.btn-teal, .btn-teal:focus, .btn-teal:hover, .btn-teal:active {
+  color: #FFFFFF;
+  background-color: #538F99;
+  border-color: #538F99;
+}
+
+.txt-teal {
+  color: #538F99;
+}
+
+.datepicker-with-disabled-dates .calendar table {
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+.datepicker-with-disabled-dates .calendar td.available {
+  border-color: #2196F3;
+  border-radius: 7px;
+  border-width: 2px;
+}
+
+.wide-button-list {
+  display: flex;
+}
+
+.wide-button-list .btn {
+  flex-grow: 1;
+}
+
+.a-hover-fix:focus, .a-hover-fix:hover {
+  text-decoration: underline !important;
+}

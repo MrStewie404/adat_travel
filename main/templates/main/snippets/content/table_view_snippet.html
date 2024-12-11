@@ -1,0 +1,190 @@
+{% load collection_extensions %}
+{% load url_extensions %}
+
+<div class="row">
+  <div class="card-block p-t-0">
+    {% if table_title %}
+      <h1 style="display: inline-block">{{ table_title }}</h1>
+    {% endif %}
+    {% if not hide_add_button %}
+      <div class="f-right">
+        <button type="button" class="btn btn-primary" onclick="location.href='{{ add_url }}'">
+          Добавить
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 table-responsive">
+    <form method="get">
+      {% if search_form %}
+        <div class="p-b-5 d-inline-block">
+          <div class="d-inline-block">
+            {{ search_form.as_p }}
+          </div>
+          <div class="d-inline-block">
+            <button type="submit" class="btn"><i class="ti-search"></i></button>
+          </div>
+        </div>
+      {% endif %}
+      {% if custom_search_forms %}
+        <p class="p-l-5 d-inline">Фильтры:</p>
+        {% for form in custom_search_forms %}
+          <div class="p-l-5 p-b-5 d-inline-block">
+            <div class="d-inline-block">
+              {{ form.as_p }}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+      <div class="f-right {% if sort_by_form %}p-b-5{% endif %}">
+        {% if page_obj %}
+          {% if page_obj.has_previous %}
+            {% add_url_param request.GET 'page' 1 as new_params %}
+            <a href="?{{ new_params.urlencode }}">|&lt;</a>
+            {% add_url_param request.GET 'page' page_obj.previous_page_number as new_params %}
+            <a class="p-l-10 p-r-10" href="?{{ new_params.urlencode }}">&lt;</a>
+          {% else %}
+            <a disabled>|&lt;</a>
+            <a class="p-l-10 p-r-10" disabled>&lt;</a>
+          {% endif %}
+          <span>
+            Показаны записи
+            <span class="text-primary">
+              {{ page_obj.start_index }}-{{ page_obj.end_index }}
+            </span>
+            из {{ page_obj.paginator.count }}
+          </span>
+          {% if page_obj.has_next %}
+            {% add_url_param request.GET 'page' page_obj.next_page_number as new_params %}
+            <a class="p-l-10" href="?{{ new_params.urlencode }}">&gt;</a>
+            {% add_url_param request.GET 'page' page_obj.paginator.num_pages as new_params %}
+            <a class="p-l-10 p-r-15" href="?{{ new_params.urlencode }}">&gt;|</a>
+          {% else %}
+            <a class="p-l-10" disabled>&gt;</a>
+            <a class="p-l-10 p-r-15" disabled>&gt;|</a>
+          {% endif %}
+        {% endif %}
+        {% if sort_by_form %}
+          <span class="f-14 p-l-10">Сортировка:</span>
+          <div class="p-l-5 d-inline-block">
+            {{ sort_by_form.as_p }}
+          </div>
+        {% endif %}
+      </div>
+    </form>
+    <table class="table table-hover{% if table_bordered %} table-bordered{% endif %}">
+      {% if headers %}
+        <thead>
+          <tr class="table-active">
+            {% for h in headers %}
+              <th class="v-middle{% if column_widths %} {{ column_widths|at:forloop.counter0 }} f-none{% endif %}">{{ h|linebreaksbr }}</th>
+            {% endfor %}
+            {% if not hide_actions_column %}
+              {% with actions_col_ind=headers|length %}
+                <th class="v-middle{% if column_widths %} {{ column_widths|at:actions_col_ind }} f-none{% endif %}">
+                  Действия
+                </th>
+              {% endwith %}
+            {% endif %}
+          </tr>
+        </thead>
+      {% endif %}
+      <tbody>
+        {% for row in rows %}
+          <tr class="{% if row.color_class is not None %} {{ row.color_class }} {% else %} {% cycle 'table-info' '' %} {% endif %} {% if row.font_class %} {{ row.font_class }} {% endif %}">
+            {% for field in row.fields %}
+              <td class="v-middle{% if field.font_class %} {{ field.font_class }}{% endif %}{% if not field.colspan and column_widths %} {{ column_widths|at:forloop.counter0 }} f-none{% endif %}"
+                  colspan="{% if field.colspan %}{{ field.colspan }}{% else %}1{% endif %}">
+                {% if column_types and column_types|at:forloop.counter0 == 'form' %}
+                  <form method="post" class="js-form-submit-once">
+                    {% csrf_token %}
+                    {{ field.form.as_p }}
+                  </form>
+                {% else %}
+                  {% if field.is_custom %}
+                    {% include field.snippet with data=field.value %}
+                  {% elif field.value is not None %}
+                    {% if row_edit_link__column_index == forloop.counter0 and row.pk %}
+                      <a class="rn-tour-name" href="{% url row_edit_link__url_name row.pk %}">
+                        {{ field.value|linebreaksbr }}
+                      </a>
+                    {% else %}
+                      {{ field.value|linebreaksbr }}
+                    {% endif %}
+                  {% else %}
+                    {% if row_edit_link__column_index == forloop.counter0 and row.pk %}
+                      <a class="rn-tour-name" href="{% url row_edit_link__url_name row.pk %}">
+                        {{ field|linebreaksbr }}
+                      </a>
+                    {% else %}
+                      {{ field|linebreaksbr }}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </td>
+            {% endfor %}
+            {% if not hide_actions_column %}
+              {% with actions_col_ind=row.fields|length %}
+                <td class="v-middle{% if column_widths %} {{ column_widths|at:actions_col_ind }} f-none{% endif %}">
+                  {% for action in row.actions %}
+                    {% with row_pk_str=row.pk|stringformat:"i" for_cnt_str=forloop.counter|stringformat:"i" %}
+                      {% with select_init_values_field_id='select_init_values_pk_'|add:row_pk_str|add:'_'|add:action.name select_choices_field_id='select_choices_pk_'|add:row_pk_str|add:'_'|add:action.name %}
+                        {% if action.handler_type == 'multi_select' or action.handler_type == 'multi_select_two_side' or action.handler_type == 'select' %}
+                          <span>
+                            {{ action.initial_values|json_script:select_init_values_field_id }}
+                            {{ action.choices|json_script:select_choices_field_id }}
+                          </span>
+                        {% endif %}
+                        <a class="m-l-5 {% if action.handler_type %} js-table-view-{{ action.handler_type }} {% elif action.page_name %}js-table-view-redirect{% endif %}"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            {% if not action.as_button %}
+                              title="{{ action.tooltip }}"
+                            {% endif %}
+                            {% if 'select' in action.handler_type or action.handler_type == 'confirm' or action.handler_type == 'submit' %}
+                              {% if 'select' in action.handler_type %}
+                                data-dialog-title="{{ action.msg|linebreaksbr }}"
+                                data-dialog-message="{{ action.text|linebreaksbr }}"
+                                data-choices="{{ select_choices_field_id }}"
+                                data-initial-values="{{ select_init_values_field_id }}"
+                                data-left-header="{{ action.left_header }}"
+                                data-right-header="{{ action.right_header }}"
+                              {% elif action.handler_type == 'confirm' %}
+                                data-dialog-message="{{ action.msg|linebreaksbr }}"
+                              {% endif %}
+                              data-row-pk="{{ row.pk }}"
+                              data-action-name="{{ action.name }}"
+                            {% elif action.handler_type == 'alert' %}
+                              data-dialog-message="{{ action.msg|linebreaksbr }}"
+                            {% elif action.handler_type == 'confirm_and_redirect' %}
+                              data-dialog-message="{{ action.msg|linebreaksbr }}"
+                              data-row-pk="{{ row.pk }}"
+                              data-action-name="{{ action.name }}"
+                              data-redirect-url="{% if action.page_extra_arg %} {% url action.page_name action.page_extra_arg action.pk|default:row.pk %} {% else %} {% url action.page_name action.pk|default:row.pk %} {% endif %}"
+                            {% elif action.page_name %}
+                              data-redirect-url="{% if action.page_extra_arg %} {% url action.page_name action.page_extra_arg action.pk|default:row.pk %} {% else %} {% url action.page_name action.pk|default:row.pk %} {% endif %}"
+                            {% endif %}>
+                          {% if action.as_button %}
+                            <button type="submit" name="" class="btn btn-success " style="width: 100%; margin-bottom: 0.5rem">
+                              {{ action.tooltip }}
+                            </button>
+                          {% else %}
+                            <i class="{{ action.icon_classes }}"></i>
+                          {% endif %}
+                        </a>
+                      {% endwith %}
+                    {% endwith %}
+                  {% endfor %}
+                </td>
+              {% endwith %}
+            {% endif %}
+          </tr>
+        {% empty %}
+          {% include 'main/snippets/content/table/s_empty_table_text.html' %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

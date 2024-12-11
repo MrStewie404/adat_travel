@@ -1,0 +1,8 @@
+<a href="{% if non_clickable %}#{% else %} {% include 'main/snippets/navbar/s_url_name_or_path.html' with url_name=index_url_name url_path=index_url_path %} {% endif %}"
+    class="logo m-l-0{% if compact_logo %} compact-logo{% endif %}">
+  <div class="img-fluid able-logo">
+    <img style="max-height: 40px;"
+        src="{% include 'main/snippets/navbar/s_url_name_or_path.html' with url_name=image_url_name url_path=image_url_path %}"
+        alt="план.тур">
+  </div>
+</a>

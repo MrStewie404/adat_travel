@@ -1,0 +1,8 @@
+{% extends 'main/snippets/content/table/s_base_inline_search.html' %}
+
+{% block form_content %}
+  {{ block.super }}
+  <div class="form-group d-inline-block f-right">
+    {{ search_form.sort_by }}
+  </div>
+{% endblock %}

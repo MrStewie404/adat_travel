@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load default_if_undefined %}
+<head>
+  <title>{% block title %}{{ page_title }}{% endblock %}</title>
+
+  <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <!-- Favicon icon -->
+  <link rel="shortcut icon" href="{% url 'favicon_image' %}" type="image/x-icon">
+  <link rel="icon" href="{% url 'favicon_image' %}" type="image/x-icon">
+  <!-- Extra fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@300&display=swap"
+      rel="stylesheet">
+  {% block style_links %}
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="{% static 'icon/themify-icons/themify-icons.css' %}">
+
+    <!-- Font Awesome -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="{% static 'icon/icofont/css/icofont.css' %}">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'icon/simple-line-icons/css/simple-line-icons.css' %}">
+
+    <!-- Required Framework -->
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Weather css -->
+    <link href="{% static 'css/svg-weather.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap Date-Picker css -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-datepicker/css/bootstrap-datetimepicker-2.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/bootstrap-daterangepicker/daterangepicker.css' %}"/>
+
+    <!-- Select 2 css -->
+    <link rel="stylesheet" href="{% static 'plugins/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2/bootstrap4-theme/dist/select2-bootstrap4.min.css' %}">
+
+    <!-- Multi Select css -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-multiselect/dist/css/bootstrap-multiselect.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/multiselect/css/multi-select.css' %}">
+
+    <!-- Light Box 2 css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/lightbox2/dist/css/lightbox.css' %}">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+
+    <!-- main-extensions.css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rn/main-extensions.css' %}">
+
+    <!-- django-forms.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rn/django-forms.css' %}">
+
+    <!-- Fix style for bootbox multi-select dialog -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rn/bootbox-fixes.css' %}">
+
+    <!-- Fix style for jQuery multi-select -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rn/jquery-multi-select.css' %}">
+  {% endblock style_links %}
+
+  <style>{% block style_content %}{% endblock %}</style>
+</head>
+
+{# По умолчанию задаём show_sidebar=True, если снаружи нам ничего не передали #}
+{% with show_sidebar=show_sidebar|default_if_undefined:True %}
+  {% block body %}
+    <body class="{% if show_sidebar %}sidebar-mini {% endif %}fixed">
+    {% block early_script_links %}{% endblock %}
+    {% block page_loader %}
+      <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+      </div>
+    {% endblock page_loader %}
+    <div class="wrapper">
+      <!-- Navbar-->
+      {% block navbar %}
+        <header class="main-header-top main-header-top-fix hidden-print">
+          {% block navbar_content %}
+            <nav class="navbar navbar-static-top m-l-0">
+              {% if show_sidebar %}
+                {% block sidebar_toggle_button %}
+                  <!-- Sidebar toggle button-->
+                  <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                {% endblock sidebar_toggle_button %}
+              {% else %}
+                <div style="width: 45px;height: 50px;display: inline-block; float: left"></div>
+              {% endif %}
+              {% include 'main/snippets/navbar/s_logo_image.html' with index_url_name='index' image_url_name='logo_image' %}
+              {% block left_navbar %}
+                {% include 'main/snippets/navbar/s_lmenu.html' with active=active_menu_item %}
+              {% endblock left_navbar %}
+              <!-- Navbar Right Menu-->
+              <div class="navbar-custom-menu navbar-right-menu f-right">
+                <ul class="top-nav">
+                  <!-- window screen -->
+                  <li class="pc-rheader-submenu">
+                    <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                      <i class="icon-size-fullscreen"></i>
+                    </a>
+                  </li>
+                  <!-- User Menu-->
+                  <li class="dropdown">
+                    <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                        class="dropdown-toggle drop icon-circle drop-image">
+                      <div class="d-inline-block v-middle">
+                        <img class="img-circle hidden-lg-down"
+                            src="{% if user.agency_employee.avatar %} {% url 'user_avatar' %} {% else %} {% static 'images/widget/contact-card.jpg' %} {% endif %}"
+                            style="width:40px; height: 40px;" alt="" onerror="this.style.display='none'">
+                      </div>
+                      <div class="d-inline-block v-middle" style="line-height: normal;">
+                        <div class="text-center" title="Имя пользователя">
+                          <b>
+                            {% if user.agency_employee %}
+                              {{ user.agency_employee.name }} {{ user.agency_employee.surname }}
+                              {% else %}{{ user.username }}
+                            {% endif %}
+                          </b>
+                        </div>
+                        <div class="text-center" title="Агентство">
+                          <p class="f-w-100" style="color: #d0d3d4 !important; font-size: 11px;">
+                            {{ request.user_agency.name }}
+                          </p>
+                        </div>
+                      </div>
+                      <i class=" icofont icofont-simple-down v-middle"></i>
+                    </a>
+                    <ul class="dropdown-menu settings-menu">
+                      {% if user.agency_employee %}
+                        <li><a href="{% url 'user_cabinet' %}"><i class="icon-user"></i> Личный кабинет</a></li>
+                      {% endif %}
+                      <li><a href="{% url 'logout' %}"><i class="icon-logout"></i> Выйти</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          {% endblock navbar_content %}
+        </header>
+      {% endblock navbar %}
+      {% if show_sidebar %}
+        {% block sidebar %}
+          <!-- Side-Nav-->
+          <aside class="main-sidebar hidden-print">
+            <section class="sidebar" id="sidebar-scroll">
+              <!-- Sidebar Menu-->
+              {% block sidebar_content %}
+                <ul class="sidebar-menu">
+                  {% block sidebar_menu_items %}
+                    <li class="nav-level">---</li>
+                  {% endblock sidebar_menu_items %}
+                </ul>
+              {% endblock sidebar_content %}
+            </section>
+          </aside>
+        {% endblock sidebar %}
+      {% endif %}
+      <div class="content-wrapper{% if not show_sidebar %} m-l-0{% endif %}">
+        <div class="container-fluid">
+          <!-- Container-fluid starts -->
+          <!-- Main content starts -->
+          <div class="row" style="background-color: white;">
+            <div class="{% block column_main_css %}col-sm-12{% endblock %}">
+              {% if messages %}
+                <ul class="messages rn-messages" hidden>
+                  {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|linebreaksbr }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% block content_breadcrumbs %}{% endblock %}
+              {% block content %}{% endblock %}
+            </div>
+          </div>
+          <!-- Main content ends -->
+          <!-- Container-fluid ends -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+    <div class="ie-warning">
+      <h1>Warning!!</h1>
+      <p>You are using an outdated version of Internet Explorer, please upgrade
+        <br/>to any of the following web browsers
+        to access this website.</p>
+      <div class="iew-container">
+        <ul class="iew-download">
+          <li>
+            <a href="http://www.google.com/chrome/">
+              <div>Chrome</div>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.mozilla.org/en-US/firefox/new/">
+              <div>Firefox</div>
+            </a>
+          </li>
+          <li>
+            <a href="http://www.opera.com">
+              <div>Opera</div>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.apple.com/safari/">
+              <div>Safari</div>
+            </a>
+          </li>
+          <li>
+            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+              <div>IE (9 & above)</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>Sorry for the inconvenience!</p>
+    </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    {% block script_links %}
+      <!-- Required Jquery -->
+      <script src="{% static 'plugins/Jquery/dist/jquery.min.js' %}"></script>
+      <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+      <script src="{% static 'plugins/tether/dist/js/tether.min.js' %}"></script>
+
+      <!-- Required Framework -->
+      <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+      <!-- Scrollbar JS-->
+      <script src="{% static 'plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+      <script src="{% static 'plugins/jquery.nicescroll/jquery.nicescroll.min.js' %}"></script>
+
+      <!--classie JS-->
+      <script src="{% static 'plugins/classie/classie.js' %}"></script>
+
+      <!-- notification -->
+      <script src="{% static 'plugins/notification/js/bootstrap-growl.min.js' %}"></script>
+
+      <!-- Select 2 js -->
+      <script src="{% static 'plugins/select2/dist/js/select2.full.min.js' %}"></script>
+      <script src="{% static 'plugins/select2/dist/js/i18n/ru.js' %}"></script>
+
+      <!-- Max-Length js -->
+      <script src="{% static 'plugins/bootstrap-maxlength/src/bootstrap-maxlength.js' %}"></script>
+
+      <!-- Multi Select js -->
+      <script src="{% static 'plugins/bootstrap-multiselect/dist/js/bootstrap-multiselect.js' %}"></script>
+      <script src="{% static 'plugins/multiselect/js/jquery.multi-select.js' %}"></script>
+      <script type="text/javascript" src="{% static 'plugins/multi-select/js/jquery.quicksearch.js' %}"></script>
+
+      <!-- Tags js -->
+      <script src="{% static 'plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.js' %}"></script>
+
+      <!-- Date picker.js -->
+      <!-- (мы его не используем, но bootstrap range picker зависит от moment.js
+            и почему-то не работает без bootstrap-material-datetimepicker.js) -->
+      <script src="{% static 'plugins/datepicker/js/moment-with-locales.min.js' %}"></script>
+      <script src="{% static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js' %}"></script>
+
+      <!-- Bootstrap Datepicker js -->
+      <script type="text/javascript"
+          src="{% static 'plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+      <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+      <script type="text/javascript"
+          src="{% static 'plugins/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js' %}"></script>
+
+      <!-- bootstrap range picker -->
+      <script type="text/javascript" src="{% static 'plugins/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+      <!-- bootbox pretty dialogs (depends on bootstrap and jquery) -->
+      <script src="{% static 'plugins/bootbox/js/bootbox.min.js' %}"></script>
+
+      <!-- light Box 2 js -->
+      <script src="{% static 'plugins/lightbox2/dist/js/lightbox.js' %}"></script>
+
+      <!-- custom js -->
+      <script type="text/javascript" src="{% static 'js/main.min.js' %}"></script>
+      <script src="{% static 'js/menu.min.js' %}"></script>
+
+      <!-- rn-custom js -->
+      {% block script_links_rn %}
+        <script src="{% static 'js/rn/main-extensions.js' %}"></script>
+        <script src="{% static 'js/rn/dialog-utils.js' %}"></script>
+        <script src="{% static 'js/rn/ajax-utils.js' %}"></script>
+        <script src="{% static 'pages/trips/copy-guest-link-hook.js' %}"></script>
+        <script src="{% static 'js/rn/show-messages.js' %}"></script>
+        <script src="{% static 'js/rn/copy-to-clipboard.js' %}"></script>
+        <script src="{% static 'js/rn/forms.js' %}"></script>
+      {% endblock script_links_rn %}
+    {% endblock script_links %}
+
+    {% block script %}
+      <script>
+        {% block script_content %}
+          var $window = $(window);
+          var nav = $('.fixed-button');
+          $window.scroll(function() {
+            if ($window.scrollTop() >= 200) {
+              nav.addClass('active');
+            } else {
+              nav.removeClass('active');
+            }
+          });
+        {% endblock script_content %}
+      </script>
+    {% endblock %}
+
+    </body>
+  {% endblock body %}
+{% endwith %}
+
+</html>

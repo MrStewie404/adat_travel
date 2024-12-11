@@ -1,0 +1,391 @@
+{% load format_extensions %}
+{% load l10n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=400"/>
+  <title>Message</title>
+  <style type="text/css">
+    .ExternalClass {
+      width: 100%;
+    }
+
+    img {
+      border: 0 none;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a img {
+      border: 0 none;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    #allrecords {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.45;
+    }
+
+    #allrecords td {
+      margin: 0;
+      padding: 0;
+    }
+
+    #allrecords ul {
+      -webkit-padding-start: 30px;
+    }
+
+    .t-records ol, .t-records ul {
+      padding-left: 20px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .r {
+        width: 100% !important;
+        min-width: 400px !important;
+        margin-top: -1px !important;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .t-emailBlock {
+        display: block !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+      }
+
+      .t-emailBlockPadding {
+        padding-top: 15px !important;
+      }
+
+      .t-emailBlockPadding30 {
+        padding-top: 30px !important;
+      }
+
+      .t-emailAlignLeft {
+        text-align: left !important;
+        margin-left: 0 !important;
+      }
+
+      .t-emailAlignCenter {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }  </style>
+</head>
+<body cellpadding="0" cellspacing="0" style="padding: 0; margin: 0; border: 0; width:100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; background-color: #f2f2f2;"><!--allrecords-->
+<table id="allrecords" class="t-records" data-tilda-email="yes" data-tilda-project-id="3509067" data-tilda-page-id="16444159" data-tilda-page-alias="" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse; border-spacing:0; padding:0; margin:0; border:0;">
+  <tr>
+    <td style="background-color: #f2f2f2; "><!--record_mail-->
+      <table id="rec268032404" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="619">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin268032404" class="r" style="margin: 0 auto;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:0px;padding-bottom:0px;padding-left:0;padding-right:0;">
+                  <table valign="top" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+                    <tr>
+                      <td style="height:30px;" height="30px"></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      <table id="rec268032406" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="323">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin268032406" class="r" style="margin: 0 auto;background-color:#ffffff;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:30px;padding-bottom:15px;padding-left:30px;padding-right:30px;">
+                  <table valign="top" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+                    <tr>
+                      <td style="text-align: left; padding: 0 0 0;">
+                        <div style="margin-right: auto; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#222222;font-size:24px;line-height:1.4;font-weight:bold;">ВЫ ЗАБРОНИРОВАЛИ
+                          {% if trip.is_excursion %}ЭКСКУРСИЮ{% else %}ТУР{% endif %}:
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      <table id="rec268032407" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="329">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin268032407" class="r" style="margin: 0 auto;background-color:#ffffff;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:15px;padding-bottom:15px;padding-left:30px;padding-right:30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+                    <tr>
+                      <td style="text-align: left; padding: 0 0 0;">
+                        <div style="margin-right: auto; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#444444;font-size:20px;line-height:1.45;"> "{{ trip.name }}"<br/>
+                          <br/>Количество мест: {{ contract.final_tourists_count }}<br/>Дата: {{ trip.start_date }}<br/> Наличие детей до 7 лет: {{ contract.trip_company.has_children_pre7|yesno:'Да,Нет' }}<br/>
+                          <br/> Предоплата составила: {{ contract.real_prepayment|currency }}&nbsp;₽
+                          <br/> Доплата гиду на месте: {{ contract.real_remaining|currency }}&nbsp;₽ <br/></div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      {% with departure_point=contract.trip_company.departure_point %}
+        <table id="rec746609872" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="329">
+          <tr>
+            <td style="padding-left:15px; padding-right:15px; ">
+              <table id="recin746609872" class="r" style="margin: 0 auto;background-color:#ffffff;border-spacing: 0;width:600px;" align="center">
+                <tr>
+                  <td style="padding-top:15px;padding-bottom:15px;padding-left:30px;padding-right:30px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+                      <tr>
+                        <td style="text-align: left; padding: 0 0 0;">
+                          <div style="margin-right: auto; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#444444;font-size:20px;line-height:1.45;">
+                            <strong>Выезд из {{ departure_point.departure_city|default:'-' }} в {{ trip.start_time|date:'H:i'|default:'-' }}</strong>
+                            <br/> Сбор группы в {{ meeting_time|date:'H:i'|default:'-' }}
+                            <br/> Место сбора - {{ departure_point.departure_address|default:'-' }}
+                            <br/>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table><!--/record--><!--record_mail-->
+        {% if departure_point.lat and departure_point.lon %}
+          <table id="rec268032408" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="618">
+            <tr>
+              <td style="padding-left:15px; padding-right:15px; ">
+                <table id="recin268032408" class="r" style="margin: 0 auto;border-spacing: 0;width:600px;" align="center">
+                  <tr>
+                    <td style="padding-top:15px;padding-bottom:30px;padding-left:30px;padding-right:30px;"><!-- Workaround: Calculate border radius for Outlook-->
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;" style="margin: 0 auto;table-layout: fixed;">
+                        <tr>
+                          <td>
+                            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;" align="center">
+                              <tr>
+                                <td> <!--[if mso]> <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://yandex.ru/maps/?ll={{ departure_point.lon|unlocalize }}%2C{{ departure_point.lat|unlocalize }}&rtext=~{{ departure_point.lat|unlocalize }}%2C{{ departure_point.lon|unlocalize }}&z=14" style="height:52px;v-text-anchor:middle;mso-wrap-style:none;mso-position-horizontal:center;" arcsize="60%" stroke="f" fillcolor="#e85f35"> <w:anchorlock/> <center style="text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff;"> Построить маршрут </center> </v:roundrect> <![endif]--> <!--[if !mso]-->
+                                  <a style="display: table-cell; text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff; border:0px solid ; background-color:#e85f35; border-radius: 20px;" href="https://yandex.ru/maps/?ll={{ departure_point.lon|unlocalize }}%2C{{ departure_point.lat|unlocalize }}&rtext=~{{ departure_point.lat|unlocalize }}%2C{{ departure_point.lon|unlocalize }}&z=14"> Построить маршрут </a> <!--[endif]-->
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table><!--/record--><!--record_mail-->
+        {% endif %}
+      {% endwith %}
+      <table id="rec746630768" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="323">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin746630768" class="r" style="margin: 0 auto;background-color:#ffffff;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:30px;padding-bottom:15px;padding-left:30px;padding-right:30px;">
+                  <table valign="top" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+                    <tr>
+                      <td style="text-align: left; padding: 0 0 0;">
+                        <div style="margin-right: auto; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#222222;font-size:24px;line-height:1.4;font-weight:bold;">ВАЖНАЯ ИНФОРМАЦИЯ</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      {% if trip.group_chat_link %}
+        <table id="rec752631961" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="324">
+          <tbody>
+            <tr>
+              <td style="padding-left:15px; padding-right:15px; ">
+                <table id="recin752631961" class="r" style="margin: 0 auto;border-spacing: 0;width:600px;" align="center">
+                  <tbody>
+                    <tr>
+                      <td style="padding-top:15px;padding-bottom:15px;padding-left:0;padding-right:0;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <td style="text-align: left; padding: 40px 30px 15px;background-color:#ffffff;">
+                                <a href="https://chat.whatsapp.com/H7QMek15hvxBdiJGIo9hQt" style="text-decoration: none; color: #222222;">
+                                  <div style="margin-right: auto; font-weight: normal; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#222222;font-size:26px;line-height:1.4;padding-top:40px;padding-bottom:15px;max-width:400px; padding:0;">
+                                    <strong>Добавьтесь в группу в WhatsApp - это важно!</strong> <br></div>
+                                </a></td>
+                            </tr>
+                            <tr>
+                              <td style="text-align: left; padding: 11px 30px 10px;background-color:#ffffff;">
+                                <div style="margin-right: auto; font-weight: normal; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#444444;font-size:20px;line-height:1.55;padding-bottom:10px;max-width:450px; padding:0;">
+                                  <strong>Контакты гида, марка машины, возможные изменения</strong> придут сюда.
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 24px 30px 0;background-color:#ffffff;">
+                                <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
+                                  <tbody>
+                                    <tr>
+                                      <td> <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ trip.group_chat_link }}" target="_blank" style="height:52px;v-text-anchor:middle;mso-wrap-style:none;mso-position-horizontal:center;" arcsize="60%" stroke="f" fillcolor="#4caf50">
+                                          <w:anchorlock/>
+                                          <center style="text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff;"> Добавиться в группу WhatsApp</center>
+                                        </v:roundrect> <![endif]--> <!--[if !mso]-->
+                                        <a style="display: table-cell; text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff; background-color:#4caf50; border-radius: 20px;" href="{{ trip.group_chat_link }}" target="_blank"> Добавиться в группу WhatsApp </a> <!--[endif]-->
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="height: 50px;background-color:#ffffff;"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      {% endif %}
+      <table id="rec746630815" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="329">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin746630815" class="r" style="margin: 0 auto;background-color:#ffffff;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:15px;padding-bottom:15px;padding-left:30px;padding-right:30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;">
+                    <tr>
+                      <td style="text-align: left; padding: 0 0 0;">
+                        <div style="margin-right: auto; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#444444;font-size:20px;line-height:1.45;">
+                          <strong></strong>Если возникнут вопросы, вы всегда можете связаться с нами<br/>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      <table id="rec746630896" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="618">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin746630896" class="r" style="margin: 0 auto;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:15px;padding-bottom:30px;padding-left:30px;padding-right:30px;"><!-- Workaround: Calculate border radius for Outlook-->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;" style="margin: 0 auto;table-layout: fixed;">
+                    <tr>
+                      <td>
+                        <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;" align="center">
+                          <tr>
+                            <td> <!--[if mso]>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="tel:8 (800) 511-41-80" style="height:52px;v-text-anchor:middle;mso-wrap-style:none;mso-position-horizontal:center;" arcsize="60%" stroke="f" fillcolor="#e85f35">
+                                <w:anchorlock/>
+                                <center style="text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff;"> Позвонить {{ agency.phone_number_formatted }}</center>
+                              </v:roundrect> <![endif]--> <!--[if !mso]-->
+                              <a style="display: table-cell; text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff; border:0px solid ; background-color:#e85f35; border-radius: 20px;" href="tel:8 (800) 511-41-80"> Позвонить {{ agency.phone_number_formatted }} </a> <!--[endif]-->
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      {% with whatsapp_number=agency.get_whatsapp_number_for_url %}
+      {% if whatsapp_number %}
+      <table id="rec746631039" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="618">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin746631039" class="r" style="margin: 0 auto;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-bottom:30px;padding-left:30px;padding-right:30px;"><!-- Workaround: Calculate border radius for Outlook-->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;" style="margin: 0 auto;table-layout: fixed;">
+                    <tr>
+                      <td>
+                        <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;" align="center">
+                          <tr>
+                            <td> <!--[if mso]>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://wa.me/{{ whatsapp_number }}?text={{ trip.question_message|urlencode }}" style="height:52px;v-text-anchor:middle;mso-wrap-style:none;mso-position-horizontal:center;" arcsize="60%" stroke="f" fillcolor="#128c7e">
+                                <w:anchorlock/>
+                                <center style="text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff;"> Написать в WhatsApp</center>
+                              </v:roundrect> <![endif]--> <!--[if !mso]-->
+                              <a style="display: table-cell; text-decoration: none; padding: 15px 30px; font-size: 15px; text-align: center; font-weight: bold; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; width: 100%;color:#ffffff; border:0px solid ; background-color:#128c7e; border-radius: 20px;" href="https://wa.me/{{ whatsapp_number }}?text={{ trip.question_message|urlencode }}"> Написать в WhatsApp </a> <!--[endif]-->
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record--><!--record_mail-->
+      {% endif %}
+      {% endwith %}
+      <table id="rec746612568" style="width:100%; border-collapse:collapse; border-spacing:0; margin:0; border:0;" cellpadding="0" cellspacing="0" data-record-type="628">
+        <tr>
+          <td style="padding-left:15px; padding-right:15px; ">
+            <table id="recin746612568" class="r" style="margin: 0 auto;background-color:#f2f2f2;border-spacing: 0;width:600px;" align="center">
+              <tr>
+                <td style="padding-top:45px;padding-bottom:45px;padding-left:30px;padding-right:30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%; margin: 0 auto;table-layout: fixed;">
+                    <tr>
+                      <td style="text-align: center; padding-top: 25px;">
+                        <div style="margin: 0 auto; font-weight: normal; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; color:#a1a1a1;font-size:14px;">Вы получили это электронное письмо, потому что оформили экскурсию по Дагестану в компании {{ agency.name }} {{ agency.requisites }}</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><!--/record-->
+    </td>
+  </tr>
+</table><!--/allrecords-->
+</body>
+</html>

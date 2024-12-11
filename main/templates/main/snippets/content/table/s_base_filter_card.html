@@ -1,0 +1,28 @@
+{# Фильтр в таблице - базовый сниппет #}
+<div class="card" style="margin-top: 5px">
+  <div class="card-header p-b-1">
+    <h5 class="card-header-text">{% block card_title %}Фильтры{% endblock %}</h5>
+    <div class="f-right" style="display: none"><a href="#">Очистить</a></div>
+  </div>
+  <div class="card-block p-t-0 b-t-muted">
+    {% block form %}
+      <form id="form1">
+        {% block form_fields %}{% endblock %}
+        {% block form_buttons %}
+          <div class="row">
+            <div class="col-sm-6">
+              {% block accept_button %}
+                <button class="btn btn-mini btn-inverse-info w-100" type="submit">Применить</button>
+              {% endblock %}
+            </div>
+            <div class="col-sm-6">
+              {% block clear_button %}
+                <a class="btn btn-mini btn-inverse-disable w-100 js-reset" href=".">Очистить</a>
+              {% endblock %}
+            </div>
+          </div>
+        {% endblock form_buttons %}
+      </form>
+    {% endblock form %}
+  </div>
+</div>

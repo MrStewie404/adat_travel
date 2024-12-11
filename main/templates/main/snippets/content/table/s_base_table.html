@@ -1,0 +1,33 @@
+{# Таблица - базовый сниппет #}
+
+{% block table_snippet %}
+  {% if pure_table == false %}
+    <div class="card" style="margin-bottom: 0px; border-radius: 20px;">
+      {% block card_top %}
+        {% if show_search %}
+          {% block search_panel %}
+            {% include 'main/snippets/content/table/s_base_inline_search.html' %}
+          {% endblock %}
+        {% endif %}
+      {% endblock %}
+      <div class="{% block card_block_css %}card-block{% endblock %}" style="padding-top: 0.7rem;">
+        <div class="table-responsive">
+  {% endif %}
+  {% block table %}
+          <table class="table m-b-0 photo-table{% if bordered_table %} table-bordered{% endif %}">
+            <thead>
+              <tr class="{% block headers_css_class %}text-uppercase{% endblock %}">
+                {% block headers %}{% endblock %}
+              </tr>
+            </thead>
+            <tbody>
+              {% block rows %}{% endblock %}
+            </tbody>
+          </table>
+  {% endblock %}
+  {% if pure_table == false %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock table_snippet %}

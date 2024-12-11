@@ -1,0 +1,19 @@
+<div class="container-fluid" style="background-color: #f3f3f3">
+  {% block search_row %}
+    <div class="row p-t-1 p-l-2 p-r-1 ">
+      <div class="col-12">
+        {# Сам тег form здесь не вставляем, т.к. он обрамляет формы поиска и фильтрации вместе #}
+        {% block form_content %}
+          {% if not hide_search_box %}
+            <div class="form-group d-inline-block">
+              {{ search_form.name }}
+              <button type="submit" class="btn btn-mini btn-inverse-info d-inline" style="font-size: 15px" form="form1">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          {% endif %}
+        {% endblock %}
+      </div>
+    </div>
+  {% endblock search_row %}
+</div>

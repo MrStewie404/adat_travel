@@ -1,0 +1,765 @@
+[
+{
+    "model": "main.supplier",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "АДАТ"
+    }
+},
+{
+    "model": "main.legalsupplier",
+    "fields": {
+        "supplier": [
+            "АДАТ", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Вид - Катера",
+        "description": "Вид услуги - катера",
+        "color": "#0096FF"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Вид - Конная прогулка",
+        "description": "Вид услуги - конная прогулка",
+        "color": "#0096FF"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Вид - Мастер-класс",
+        "description": "Вид услуги - мастер-класс",
+        "color": "#0096FF"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Вид - Народный фольклор",
+        "description": "Вид услуги - народный фольклор",
+        "color": "#0096FF"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Вид - Развлечения",
+        "description": "Вид услуги - развлечения",
+        "color": "#0096FF"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Еда",
+        "description": "Питание",
+        "color": "#00B140"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Размещение",
+        "description": "Размещение в гостинице",
+        "color": "#808080"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Гид",
+        "description": "Услуги гида",
+        "color": "#F57C00"
+    }
+},
+{
+    "model": "main.servicelabel",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Транспорт",
+        "description": "",
+        "color": "#C21E56"
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Нарын-Кала (вход)",
+        "city": [
+            "Дербент"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Нарын-Кала (вход)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Нарын-Кала (гид по крепости)",
+        "city": [
+            "Дербент"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Гид", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Нарын-Кала (гид по крепости)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "СарыКум (музей)",
+        "city": [
+            "Махачкала"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "СарыКум (музей)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Гуниб (гид в музее)",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Гид", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Гуниб (гид в музее)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Гуниб (вход в музей)",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Гуниб (вход в музей)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Катера",
+        "city": [
+            "Махачкала"
+        ],
+        "duration_minutes": 60,
+        "description": "Катание на катерах по Сулакскому каньону / Чиркейскому водохранилищу",
+        "labels": [
+            [
+                "Вид - Катера", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Катера", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Джип/УАЗ до катеров",
+        "city": [
+            "Махачкала"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Транспорт", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Джип/УАЗ до катеров", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Джип/УАЗ Гамсутль",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Транспорт", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Джип/УАЗ Гамсутль", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Завтрак в Ирганае",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Еда", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Завтрак в Ирганае", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Шашлыки",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Еда", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Шашлыки", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Чай на коврах",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Еда", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Чай на коврах", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Кофе на берегу озера",
+        "city": [
+            "Хунзах"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Еда", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Кофе на берегу озера", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Кофе-тайм в Адат",
+        "city": [
+            "Гуниб"
+        ],
+        "supplier": [
+            "АДАТ", "АДАТ"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Еда", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Кофе-тайм в Адат", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Ужин гид и водитель",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Еда", "АДАТ"
+            ],
+            [
+                "Гид", "АДАТ"
+            ],
+            [
+                "Транспорт", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Ужин гид и водитель", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Викторина/папаха",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Вид - Развлечения", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Викторина/папаха", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Музей Ахульго (гид)",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Гид", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Музей Ахульго (гид)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Музей Ахульго (вход)",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Музей Ахульго (вход)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Музей Цада (гид)",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Гид", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Музей Цада (гид)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Музей Цада (вход)",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Музей Цада (вход)", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Гид Гоор",
+        "city": [
+            "Гоор"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Гид", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Гид Гоор", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Национальное пение Гоор",
+        "city": [
+            "Гоор"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Вид - Народный фольклор", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Национальное пение Гоор", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Джип/УАЗ Гоор",
+        "city": [
+            "Гоор"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+            [
+                "Транспорт", "АДАТ"
+            ]
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Джип/УАЗ Гоор", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Поляна Эко сбор",
+        "city": [
+            "Гуниб"
+        ],
+        "duration_minutes": 60,
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "0.00",
+        "service": [
+            "Поляна Эко сбор", "АДАТ"
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "fields": {
+        "agency": [
+            "АДАТ"
+        ],
+        "name": "Экраноплан \"Лунь\"",
+        "city": [
+            "Каспийск"
+        ],
+        "address": "",
+        "supplier": [
+            "АДАТ", "АДАТ"
+        ],
+        "min_group_size": 1,
+        "max_group_size": null,
+        "duration_minutes": 180,
+        "description": "Дополнительное посещение экраноплана Лунь, расположенного на берегу Каспийского моря в г. Дербент",
+        "labels": [
+        ]
+    }
+},
+{
+    "model": "main.serviceprice",
+    "fields": {
+        "cost": "500.00",
+        "price_type": 1,
+        "service": [
+            "Экраноплан \"Лунь\"", "АДАТ"
+        ],
+        "start_date": "0001-01-01",
+        "end_date": "0001-12-31"
+    }
+}
+]

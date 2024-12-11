@@ -1,0 +1,39 @@
+{# Фильтр списка туров - базовый шаблон #}
+
+{% extends 'main/snippets/content/table/s_base_filter_card_no_form_tag.html' %}
+
+{% load crispy_forms_filters %}
+
+{% block form_fields %}
+  {# Состояние #}
+  {% if filter_trip.state %}
+    <div class="form-group">
+      {{ filter_trip.state.as_hidden }}
+    </div>
+  {% endif %}
+  {# Шаблон тура #}
+  <div class="form-group">
+    <label for="{{ filter_trip.route.id_for_label }}" class="form-control-label">{% block route_label_text %}Шаблон{% endblock %}</label>
+    {{ filter_trip.route }}
+  </div>
+  {% include 'main/snippets/content/table/s_date_filter_form_mixin.html' with form=filter_trip %}
+
+  {% if filter_trip.days_count %}
+    {# Длительность #}
+    <div class="form-group">
+      <label for="{{ filter_trip.days_count.id_for_label }}" class="form-control-label">Кол-во дней</label>
+      {{ filter_trip.days_count }}
+    </div>
+    {# Длительность #}
+    {% block duration_buttons %}
+      <div class="form-group">
+        <label for="{{ filter_trip.days_count.id_for_label }}" class="form-control-label">Продукт</label>
+        <div class="text-Left" style="padding-bottom: 8px">
+          {% include 'main/trips/trip_list/s_trips_table_filter_days_button.html' with text='Любой' extra_css_class='js-filter-days-all' %}
+          {% include 'main/trips/trip_list/s_trips_table_filter_days_button.html' with text='Экскурсии' extra_css_class='js-filter-days-excursions' %}
+          {% include 'main/trips/trip_list/s_trips_table_filter_days_button.html' with text='Туры' extra_css_class='js-filter-days-multiple' %}
+        </div>
+      </div>
+    {% endblock duration_buttons %}
+  {% endif %}
+{% endblock form_fields %}

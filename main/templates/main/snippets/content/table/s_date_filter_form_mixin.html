@@ -1,0 +1,27 @@
+{# Период #}
+<div class="form-group">
+  <label class="form-control-label">Период</label>
+  <div class="text-right d-inline-block m-r-1" width="100%" style="position:absolute;right:0;">
+    <span class="label-inverse-default badge-inverse-default label m-r-5 bg-white js-filter-days-all"
+        style="cursor: pointer"
+        id="id_today_btn" title="">
+      Сегодня
+    </span>
+    <span class="label-inverse-default badge-inverse-default label m-r-0 bg-white js-filter-days-all"
+        style="cursor: pointer;"
+        id="id_yesterday_btn" title="">
+      Вчера
+    </span>
+  </div>
+
+  <div class="form-inline" style="padding-bottom: 8px">
+    <div class="form-inline" style="display: inline-block; width: 48%">{{ form.start_date }}</div>
+    <div class="form-inline p-r-1" style="display: inline-block; width: 48%; position:absolute;right:0;">{{ form.end_date }}</div>
+  </div>
+</div>
+
+{# Месяц #}
+<div class="form-group">
+  <label for="{{ form.month.id_for_label }}" class="form-control-label">Месяц</label>
+  {{ form.month }}
+</div>

@@ -1,0 +1,26 @@
+{% extends 'main/supplier_cabinet/s_base_dashboard_panel.html' %}
+
+
+{% block body_content %}
+  <h4 class="text-center m-t-30" style="font-weight: bold;">ТУРЫ НА ЗАВТРА</h4>
+  <div style="
+    /* border: 5px solid rgb(103, 172, 90); */
+    background-color: rgb(103, 172, 90);
+    border-radius: 20px;
+    overflow-y: auto;
+    padding: 10px;
+    max-height: 270px;
+    /* box-shadow: inset 0em 0em 10px black; */
+    " class="m-b-15">
+      {% include 'main/supplier_cabinet/s_future_trips_table.html' with trips=nearest_trips %}
+    </div>
+
+  {% comment %}
+  <div class="p-l-25 p-r-25 text-center">
+    <a class="btn btn-success w-100" href="{% url 'supplier_lk_multi_day_trips' cabinet_id %}">Все туры</a>
+  </div>
+  {% endcomment %}
+
+  <a class="btn btn-success w-100" href="{{ guest_link_url }}">Туры и экскурсии</a>
+
+  {% endblock %}

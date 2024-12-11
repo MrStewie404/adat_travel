@@ -1,0 +1,31 @@
+{% extends 'main/trips_base_table_new.html' %}
+
+{% load static %}
+
+{% block navbar_content %}
+  {% include 'main/supplier_cabinet/s_navbar.html' %}
+{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block column_main_css %}col-xl-10 offset-xl-1 col-lg-12 {% endblock %}
+
+{% block content_breadcrumbs %}
+  {% url 'supplier_lk_dashboard' cabinet_id as url_home %}
+  {% include 'main/snippets/content/s_title_with_breadcrumbs.html' with 1_text=page_title %}
+{% endblock %}
+
+{% block table_and_filters %}
+  {% with show_search=True hide_search_box=True hide_filter=True %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block table %}
+  {% include 'main/supplier_cabinet/s_company_commissions_table.html' %}
+{% endblock %}
+
+{% block script_links %}
+  {{ block.super }}
+  <script src="{% static 'js/rn/dropdown-filter.js' %}"></script>
+{% endblock %}

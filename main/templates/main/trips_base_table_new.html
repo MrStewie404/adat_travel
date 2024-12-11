@@ -1,0 +1,54 @@
+{% extends 'main/trips_base.html' %}
+
+{% load static %}
+
+{% block style_links %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/rn/tour_list.css' %}">
+{% endblock style_links %}
+
+{% block script_links %}
+  {{ block.super }}
+  <script src="{% static 'pages/common/dates_filter.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  {% if page_obj and paginator.num_pages > 1 %}
+    <div class="row">
+      <div class="{% if not hide_filter %}col-xl-9 col-lg-10 {% endif %}col-sm-12">
+        {% include "main/snippets/pagination/s_pagination_buttons.html" with form="form1" %}
+      </div>
+    </div>
+  {% endif %}
+  <div class="row">
+    {% block table_and_filters %}
+
+      <form id="form1"> {# Делаем форму, обрамляющую окошко поиска и форму фильтрации #}
+
+        {% block table_form_content %}
+
+          {# Основная таблица #}
+          <div class="{% if not hide_filter %}col-xl-9 col-lg-8 {% endif %}col-sm-12">
+            {% block table %}{% endblock %}
+          </div>
+          {# Форма поиска #}
+          {% if not hide_filter %}
+            <div class="col-xl-3 col-lg-4 col-sm-12">
+              {% block table_filter %}{% endblock %}
+            </div>
+          {% endif %}
+
+        {% endblock table_form_content %}
+
+      </form>
+
+    {% endblock table_and_filters %}
+  </div>
+  {% if page_obj and paginator.num_pages > 1 %}
+    <div class="row p-b-10">
+      <div class="{% if not hide_filter %}col-xl-9 col-lg-8 {% endif %}col-sm-12">
+        {% include "main/snippets/pagination/s_pagination_buttons.html" with form="form1" %}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

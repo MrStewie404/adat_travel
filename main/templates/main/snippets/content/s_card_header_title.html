@@ -1,0 +1,46 @@
+<div class="card-header p-b-0">
+  <div class="sub-title m-b-0">
+    <div class="d-flex" style="align-items: flex-end;">
+      {% block header_left %}
+        <h5 class="card-header-text" title="{% block title_tooltip %} {{ title_tooltip }} {% endblock %}" data-toggle="tooltip" data-placement="bottom">
+          {% block title_text %}{{ title }}{% endblock %}
+        </h5>
+      {% endblock %}
+      <div style="margin-left: auto;">
+        {% block header_right %}
+          {% block header_buttons %}
+            {% if add_url_name or add_url_path %}
+              {% include 'main/snippets/content/s_card_header_button_primary.html' with text='Добавить' url_name=add_url_name url_path=add_url_path only %}
+            {% endif %}
+            {% if edit_url_name or edit_url_path %}
+              {% include 'main/snippets/content/s_card_header_button_primary.html' with text='Редактировать' url_name=edit_url_name url_path=edit_url_path only %}
+            {% endif %}
+            {% if copy_url_name or copy_url_path %}
+              {% include 'main/snippets/content/s_card_header_button_primary.html' with text='Создать копию' title=copy_title url_name=copy_url_name url_path=copy_url_path only %}
+            {% endif %}
+            {% if delete_url_name or delete_url_path %}
+              {% include 'main/snippets/content/s_card_header_button_danger.html' with text=delete_text|default:'Удалить' url_name=delete_url_name url_path=delete_url_path only %}
+            {% endif %}
+            {% if may_export == True or may_export is None %}
+              {% if export_url_name or export_url_path %}
+                {% include 'main/snippets/content/s_card_header_button_warning.html' with text='Экспорт Excel' url_name=export_url_name url_path=export_url_path only %}
+              {% endif %}
+            {% endif %}
+          {% endblock header_buttons %}
+          {% block other_actions %}
+            {% if show_other_actions %}
+              <span class="dropdown dropdown-primary dropdown-no-arrow">
+                <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fa fa-ellipsis-v"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                  {% block other_action_items %}{% endblock %}
+                </ul>
+              </span>
+            {% endif %}
+          {% endblock other_actions %}
+        {% endblock header_right %}
+      </div>
+    </div>
+  </div>
+</div>

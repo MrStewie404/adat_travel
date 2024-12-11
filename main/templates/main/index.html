@@ -1,0 +1,52 @@
+{% extends 'main/trips_base.html' %}
+
+{% load static %}
+
+{% block style_links %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/rn/tour_list.css' %}">
+{% endblock style_links %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block sidebar_menu_items %}
+  {% include 'main/index_sidebar.html' %}
+{% endblock sidebar_menu_items %}
+
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="main-header p-l-0" style="margin-top: 0px;">
+        <h4>Обзорная панель</h4>
+      </div>
+    </div>
+
+    <div class="row dashboard-header">
+      <div class="row">
+        {% if money_item %}
+          {% include 'main/dashboard/s_money_dashboard.html' with item=money_item %}
+        {% endif %}
+        {% include 'main/dashboard/s_nearest_trips_dashboard.html' with item=nearest_trips_item %}
+        {% if bookings_item %}
+          {% include 'main/dashboard/s_bookings_dashboard.html' with item=bookings_item %}
+        {% endif %}
+        {% if clients_item %}
+          {% include 'main/dashboard/s_clients_dashboard.html' with item=clients_item %}
+        {% endif %}
+      </div>
+      <div class="row">
+        {% if routes_item %}
+          {% include 'main/dashboard/s_routes_dashboard.html' with item=routes_item %}
+        {% endif %}
+        {% if workers_item %}
+          {% include 'main/dashboard/s_trip_workers_dashboard.html' with item=workers_item %}
+        {% endif %}
+        {% if services_item %}
+          {% include 'main/dashboard/s_services_dashboard.html' with item=services_item %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

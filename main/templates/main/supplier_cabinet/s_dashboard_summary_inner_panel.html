@@ -1,0 +1,99 @@
+{% extends 'main/supplier_cabinet/s_base_dashboard_panel.html' %}
+
+{% load qr_code %}
+{% load format_extensions %}
+
+{% block panel_css_class %}rn-sub-panel rn-panel-r-large{% endblock panel_css_class %}
+
+{% block heading_css_class %}panel-heading f-bold rn-panel-heading-r-large bg-success{% endblock %}
+
+{% block heading_content %}
+  <i class="icofont icofont-calendar p-r-5"></i>{% now "F" %}
+{% endblock %}
+
+{% block panel_body %}
+  <div class="panel-body rn-panel-footer-r-large p-l-5 p-r-5">
+    <div class="row">
+      {% comment %}
+      <div class="col-xs-6 p-l-0 p-r-0 text-nowrap text-center">
+      </div>
+      {% endcomment %}
+      <div class="p-l-0 text-nowrap text-center">
+        {% comment %}
+        <div class="d-inline-block text-success v-top f-20">
+          <i class="icofont icofont-wallet"></i>
+        </div>
+        {% endcomment %}
+        <div class="d-inline-block f-bold text-center">
+          <div class="dropdown dropdown-no-arrow d-inline-block">
+            <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Подробнее">
+              <h3 class="btn btn-success w-100" style="line-height: 1em; font-size: 24px; border-radius: 10px;">{{ month_stat.commission_paid|currency:0 }} ₽</h3>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" style="border-radius: 10px;" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+              <div class="row" style="display: flex; margin: 5px;">
+                <li>
+                  {% comment %}<div class="d-inline-block f-bold text-center">{% endcomment %}
+                    <div class="text-center panel-body f-bold text-center rn-panel-r-large">
+                      
+                      Туристов
+                      <h3 style="line-height: 1em;">{{ month_stat.tourists_count }}</h3>
+                      {% if month_stat_non_finished.tourists_count > 0 %}
+                        <p class="f-bold txt-success" style="font-size: 18px;">+{{ month_stat_non_finished.tourists_count }}</p>
+                      {% endif %}
+                    </div>
+                </li>
+                <li>
+                    <div class="panel-body f-bold text-center rn-panel-r-large">
+                      <div class="p-l-15 p-r-15 text-center">
+                        К выплате
+                        <h3 class="txt-danger" style="line-height: 1em;">{{ finished_stat.commission_remaining|currency:0 }}&nbsp;₽</h3>
+                      </div>
+                    </div>
+                </li>
+              </div>
+              <li style="margin: 10px;">
+                <a class="btn btn-success w-100" style="border-radius: 5px;" href="{% url 'supplier_lk_commission_details' cabinet_id %}">
+                  Подробнее
+                </a>
+              </li>
+            </ul>
+          </div>
+          {% if month_stat_non_finished.commission > 0 %}
+            <p class="f-bold txt-success" style="font-size: 18px;">+{{ month_stat_non_finished.commission|currency:0 }}&nbsp;₽</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body f-bold text-center m-t-10 rn-panel-r-large">
+    <div class="p-l-15 p-r-15">
+      <br>
+      {% if guest_link_url %}
+        {% comment %}<a href="{{ guest_link_url }}" class="js-qr-code" title="Нажмите для перехода по ссылке для самозаписи">{% endcomment %}
+          <div class="dropdown dropdown-no-arrow d-inline-block">
+            <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Скопировать в буфер обмена">
+              {% qr_from_text guest_link_url size="8" image_format="png" %}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+              <li>
+                <a class="dropdown-item waves-light waves-effect js-copy-qr-code" href="#">
+                  Скопировать QR-код
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item waves-light waves-effect js-copy-guest-link" data-url="{{ guest_link_url }}" href="#">
+                  Скопировать ссылку
+                </a>
+              </li>
+            </ul>
+          </div>
+        {% comment %}</a>{% endcomment %}
+        <br>
+      {% else %}
+        <a class="js-create-guest-link" href="#" data-request-url="{% url 'supplier_lk_get_guest_link' cabinet_id %}">
+          Создать QR-код
+        </a>
+      {% endif %}
+    </div>
+  </div>
+{% endblock panel_body %}

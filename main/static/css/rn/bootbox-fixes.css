@@ -1,0 +1,18 @@
+/**  =====================
+      Fix styles for bootbox dialogs
+==========================  **/
+
+/* Add scrollbar to multi-select */
+.bootbox-input-select[multiple] {
+  overflow-y: auto;
+}
+
+/* Add scrollbar to select with specific size  */
+.bootbox-input-select[size] {
+  overflow-y: auto;
+}
+
+/* Inline header text and close button */
+.bootbox .modal-title {
+  display: inline-block !important;
+}

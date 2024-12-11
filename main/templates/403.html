@@ -1,0 +1,19 @@
+{% extends 'error.html' %}
+
+{% block title %}
+  Доступ запрещён
+{% endblock %}
+
+{% block error_css_class %}error-403{% endblock %}
+
+{% block error_code %}
+  403
+{% endblock %}
+
+{% block error_header %}
+  Доступ запрещён
+{% endblock %}
+
+{% block error_text %}
+  К сожалению, у Вас нет прав для просмотра этой страницы.
+{% endblock %}

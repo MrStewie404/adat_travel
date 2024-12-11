@@ -1,0 +1,94 @@
+{% extends 'main/trips_base.html' %}
+
+{% load pluralize_ru %}
+{% load format_extensions %}
+
+{% block column_main_css %}col-sm-12 col-xl-6 offset-xl-3 col-md-8 offset-md-2{% endblock %}
+
+{% block navbar_content %}
+  {% include 'main/guest_cabinet/s_navbar.html' %}
+{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block early_script_links %}
+  {% include 'main/guest_cabinet/s_yandex_metrics_counter.html' %}
+{% endblock %}
+
+{% block content %}
+  {% with trip=client_contract.trip_company.trip %}
+    <div class="row p-t-15">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-block text-center">
+            <h5>Благодарим Вас за выбор!</h5>
+            <div class="p-t-15 p-b-15">
+              Ваша заявка принята, скоро наш оператор свяжется с Вами.
+            </div>
+          </div>
+        </div>
+        {% if trip.group_chat_link %}
+          <div class="card">
+            <div class="card-block text-center">
+              <h5 class="txt-danger">Добавьтесь в группу в WhatsApp - это важно!</h5>
+              <div class="p-t-15 p-b-15">
+                <b>Контакты гида, марка машины, возможные изменения</b> придут сюда.
+              </div>
+                <div class="p-l-15 p-r-15">
+                  <a class="btn btn-success m-t-10 w-100"
+                      href="{{ trip.group_chat_link }}"
+                      target="_blank"
+                      rel="external noopener noreferrer nofollow">
+                    Добавиться в группу WhatsApp
+                  </a>
+                </div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="card">
+          <div class="card-block">
+            <h5 class="text-center">Детали заявки</h5>
+            <div class="f-bold p-t-15 p-b-15 p-l-15 p-r-15">
+              {% with tourists_count=client_contract.final_tourists_count %}
+                <ul>
+                  <li>
+                    {{ trip.name }} · {{ trip.start_date }} {% if trip.start_time %} (начало в {{ trip.start_time }}){% endif %}
+                  </li>
+                  <li>{{ tourists_count }}&nbsp;гост{{ tourists_count|pluralize_ru:'ь,я,ей' }}</li>
+                  <li>Полная стоимость: {{ client_contract.total_price|currency:0 }}&nbsp;₽</li>
+                  <li>Предоплата: {{ client_contract.prepayment|currency:0 }}&nbsp;₽</li>
+                </ul>
+              {% endwith %}
+            </div>
+            <div class="p-l-15 p-r-15">
+              <a class="btn btn-success w-100" href="{% url 'guest_lk_dashboard' cabinet_id %}">Вернуться к турам</a>
+            </div>
+          </div>
+        </div>
+        {% if supplier.agency.phone_number %}
+          {% with phone_number=supplier.agency.phone_number|phonenumber whatsapp_number=supplier.agency.get_whatsapp_number_for_url %}
+            <div class="card">
+              <div class="card-block text-center">
+                <h5>Остались вопросы?</h5>
+                <div class="p-t-15 p-b-15">Свяжитесь с нами удобным способом.</div>
+                <div class="p-l-15 p-r-15">
+                  <a class="btn btn-inverse-default w-100" href="tel:{{ phone_number }}">Позвонить {{ phone_number }}</a>
+                  {% if whatsapp_number %}
+                    <a class="btn btn-success m-t-10 w-100"
+                        href="https://wa.me/{{ whatsapp_number }}?text={{ trip.question_message|urlencode }}"
+                        target="_blank"
+                        rel="external noopener noreferrer nofollow">
+                      Написать в WhatsApp
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endwith %}
+        {% endif %}
+      </div>
+    </div>
+  {% endwith %}
+{% endblock %}

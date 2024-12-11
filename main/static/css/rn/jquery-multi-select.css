@@ -1,0 +1,11 @@
+/**  =====================
+      Fix styles for jQuery multiSelect when used inside modal dialogs
+==========================  **/
+
+.modal-dialog .ms-container {
+  width: 100%;
+}
+
+.modal-dialog .ms-container .ms-list {
+  height: 350px;
+}

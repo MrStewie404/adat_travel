@@ -1,0 +1,5 @@
+{% extends 'main/snippets/content/table/s_base_inline_search_and_filter.html' %}
+
+{% block filter_content %}
+  {% include 'main/supplier_cabinet/s_trips_table_filter.html' with filter_trip=filter_form %}
+{% endblock %}

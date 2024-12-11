@@ -1,0 +1,17 @@
+{% extends 'main/trips_base_form.html' %}
+
+{% block submit_btn_text %}Удалить{% endblock %}
+
+{% block form %}
+  {% if may_delete != False %}
+    <p class="f-15">{% block confirm_text %}{% endblock %}</p>
+    {% block confirm_extra_content %}{% endblock %}
+    {{ block.super }}
+  {% else %}
+    <p class="f-15">{% block cannot_delete_text %}{% endblock %}</p>
+    {% block cannot_delete_extra_content %}{% endblock %}
+    <div class="button-list p-t-10">
+      <a class="btn btn-secondary" href="{{ on_cancel_url }}">Назад</a>
+    </div>
+  {% endif %}
+{% endblock %}

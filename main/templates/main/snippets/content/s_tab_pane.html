@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs md-tabs" role="tablist">
+  {% for tab in tabs %}
+    <li class="nav-item">
+      <a class="nav-link {% if tab.active %}active{% endif %}" data-toggle="tab" href="#{{ tab.id }}" onclick="location.href='{{ tab.target_url }}'; return false;" role="tab">
+        {{ tab.text }}
+      </a>
+      <div class="slide"></div>
+    </li>
+  {% endfor %}
+</ul>
+<div class="tab-content">
+  {% for tab in tabs %}
+    <div class="tab-pane {% if tab.active %}active{% endif %}" id="{{ tab.id }}" role="tabpanel">
+      {% include tab.content_snippet with tab_data=tab.tab_data %}
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,15 @@
+{% load url_extensions %}
+
+<a
+    class="btn btn-mini {% if enabled is not None and enabled == False %} btn-inverse-disable
+        {% elif page_obj.number == page_number %} btn-info  {% else %} btn-inverse-info {% endif %}"
+    style="font-size: 15px; font-weight: normal"
+    {% if enabled is not None and enabled == False %} disabled {% endif %}
+    {% if page_number == paginator.ELLIPSIS or page_number == "" %}
+    {% else %}
+      {% add_url_param request.GET 'page' page_number as new_params %}
+      href="?{{ new_params.urlencode }}"
+      value={{ page_number }}
+    {% endif %} >
+  {% if page_name %}  {{ page_name }} {% else %} {{ page_number }} {% endif %}
+</a>

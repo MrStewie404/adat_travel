@@ -1,0 +1,28 @@
+{% firstof exception_type 'Report' %}{% if request %} at {{ request.path_info }}{% endif %}
+{% firstof exception_value 'No exception message supplied' %}
+{% if request %}
+Request Method: {{ request.META.REQUEST_METHOD }}
+Request URL: {{ request.get_raw_uri }}{% endif %}
+Server time: {{server_time|date:"r"}}
+{% if template_info %}
+Template error:
+In template {{ template_info.name }}, error at line {{ template_info.line }}
+   {{ template_info.message }}
+{% endif %}{% if frames %}
+
+{% if exception_type %}Exception Type: {{ exception_type }}{% if request %} at {{ request.path_info }}{% endif %}
+{% if exception_value %}Exception Value: {{ exception_value }}{% endif %}{% endif %}{% endif %}
+{% if request %}Request information:
+{% if user_str %}USER: {{ user_str }}{% endif %}
+
+GET:{% for k, v in request_GET_items %}
+{{ k }} = {{ v|stringformat:"r" }}{% empty %} No GET data{% endfor %}
+
+POST:{% for k, v in filtered_POST_items %}
+{{ k }} = {{ v|stringformat:"r" }}{% empty %} No POST data{% endfor %}
+{% else %}Request data not supplied
+{% endif %}
+
+{% if not is_email %}
+This page is designed to use in emails only. If you see it on a website, it means that something went wrong.
+{% endif %}

@@ -1,0 +1,36 @@
+{% load format_extensions %}
+{# Базовый шаблон для навигационной панели в кабинете контрагента или госта. На вход нужно передать параметры image_url_path и index_url #}
+
+<div class="{% if navbar_theme == 'light' %}bg-white{% endif %}" style="{% block navbar_style %}height: 50px;{% endblock %}">
+  {% block navbar_content %}
+    {% if not request.user_agency %}
+      {% include 'main/snippets/navbar/s_logo_image.html' with index_url_name='index' compact_logo=True non_clickable=True %}
+    {% else %}
+      {% include 'main/snippets/navbar/s_logo_image.html' with index_url_path=index_url compact_logo=True non_clickable=True %}
+    {% endif %}
+    <i class="icofont icofont-curved-down f-24 txt-muted js-custom-dialog"></i>
+  {% endblock %}
+</div>
+
+{# Диалог - о компании #}
+<div class="js-custom-dialog-message" hidden>
+  {% with agency=supplier.agency %}
+    <h3>{{ agency.name }}</h3>
+    <div class="p-l-5">
+      <div class="txt-muted p-t-10">О компании</div>
+      <div>{{ agency.requisites|linebreaksbr }}</div>
+
+      <div class="txt-muted p-t-10">Юридический адрес</div>
+      <div>{{ agency.legal_address }}</div>
+
+      <div class="txt-muted p-t-10">Фактический адрес</div>
+      <div>{{ agency.actual_address }}</div>
+
+      <div class="txt-muted p-t-10">Телефон</div>
+      <div>{{ agency.phone_number|phonenumber }}</div>
+
+      <div class="txt-muted p-t-10">E-Mail</div>
+      <div>{{ agency.email }}</div>
+    </div>
+  {% endwith %}
+</div>

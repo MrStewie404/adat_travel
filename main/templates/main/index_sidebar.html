@@ -1,0 +1,36 @@
+{% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with nav_title='Добавить' icon_class='icon-plus' %}
+{% if permissions.add.trip %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Новый тур' url_name='trip_add' icon_class='icon-flag' %}
+{% endif %}
+{% if permissions.add.client %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Новый гость' url_name='client_add' icon_class='icon-user' %}
+{% endif %}
+{% if permissions.add.worker %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Новый гид' url_name='worker_add' icon_class='icofont icofont-steering' %}
+{% endif %}
+{% if permissions.add.route %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Новый шаблон' url_name='route_add' icon_class='ti-direction-alt' %}
+{% endif %}
+
+{% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with nav_title='Навигация' %}
+{% url 'trips' as url_trips %}
+{% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Туры' url_path=url_trips|add:'?state=CURRENT' item_id='TRIPS_CURRENT' icon_class='icofont icofont-luggage' %}
+{% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Экскурсии' url_name='excursions' item_id='EXCURSIONS' icon_class='icofont icofont-tracking' %}
+
+{% if permissions.view.hotel_booking %}
+  {% url 'trips_bookings' as url_bookings %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with text='Бронирования'  url_path=url_bookings|add:'?state=ACTIVE' item_id='BOOKINGS_ACTIVE' icon_class='ti-lock' %}
+{% endif %}
+
+{% if permissions.view.client %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with url_name='clients' text='Гости' icon_class='icon-people' %}
+{% endif %}
+{% if permissions.view.worker %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with url_name='workers' text='Гиды' icon_class='icofont icofont-id-card' %}
+{% endif %}
+{% if permissions.view.route %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with url_name='routes' text='Шаблоны' icon_class='ti-direction-alt' %}
+{% endif %}
+{% if permissions.view.directory %}
+  {% include 'main/snippets/sidebar/s_base_sidebar_menu_item.html' with url_name='directory' text='Справочники' icon_class='icofont icofont-address-book' %}
+{% endif %}

@@ -1,0 +1,39 @@
+{% extends 'main/trips_base.html' %}
+
+{% load static %}
+{% load format_extensions %}
+
+{% block style_links %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/rn/tour_list.css' %}">
+{% endblock %}
+
+{% block column_main_css %}col-sm-12 col-xl-6 offset-xl-3 col-md-8 offset-md-2{% endblock %}
+
+{% block navbar_content %}
+  {% include 'main/supplier_cabinet/s_navbar.html' %}
+{% endblock %}
+
+{% block body %}
+  {# Прячем sidebar #}{% with show_sidebar=False %}{{ block.super }}{% endwith %}
+{% endblock %}
+
+{% block content %}
+  <div class="p-t-5">
+    <div class="col-sm-12 m-b-50">
+      {% include 'main/supplier_cabinet/s_dashboard_summary_panel.html' with show_heading=True %}
+      
+      {% comment %} {% include 'main/supplier_cabinet/s_dashboard_summary_inner_panel.html' with show_heading=True %} {% endcomment %}
+      
+      {% include 'main/supplier_cabinet/s_dashboard_trips_panel.html' with show_heading=True %}
+      
+      {% comment %} {% include 'main/supplier_cabinet/s_dashboard_excursions_panel.html' with show_heading=True %} {% endcomment %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block script_links %}
+  {{ block.super }}
+  <script src="{% static 'js/rn/csrf-token.js' %}"></script>
+  <script src="{% static 'pages/supplier_cabinet/dashboard.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{# Фильтр в таблице - базовый сниппет, но без тега form. #}
+{# Нужен на страницах с поиском, где тег form обрамляет формы поиска и фильтрации вместе. #}
+
+{% extends 'main/snippets/content/table/s_base_filter_card.html' %}
+
+{% block form %}
+  {% block form_fields %}{{ block.super }}{% endblock %}
+  {% block form_buttons %}{{ block.super }}{% endblock %}
+{% endblock form %}

@@ -1,0 +1,5 @@
+{% load default_if_undefined %}
+
+{% if text or title %}
+  <span class="badge badge-danger m-r-0" title="{{ title }}" data-toggle="tooltip" data-placement="bottom">{{ text|default_if_undefined:'!' }}</span>
+{% endif %}

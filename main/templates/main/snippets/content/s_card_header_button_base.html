@@ -1,0 +1,6 @@
+<a class="{% block css_class %}label m-r-5 bg-white{% if extra_css_class %} {{ extra_css_class }}{% endif %}{% endblock %}"
+    href="{% include 'main/snippets/navbar/s_url_name_or_path.html' %}"
+    title="{{ title }}"
+    {% block extra_attrs %}{% endblock %}>
+  {{ text }}
+</a>

@@ -1,0 +1,26 @@
+{# Этот шаблонн рисует список кнопок для Paginator. Предназначен для работы совместно с формой (!) #}
+{# Когда есть форма фильтрации, анпример, то Paginator при навигации забивает форму передавая page=XX #}
+{# для обхода этого сделан это шаблон. Он добавляет поле к запросу не меняя содержимого формы. #}
+{# На входе: #}
+{# 1. то, что даёт Paginator: page_obj - текущая страницa, paginator - сам объект  #}
+{# 2. form - id формы к которой он привязан #}
+{% load paginator_tags %}
+{% get_proper_elided_page_range paginator page_obj.number as page_range %}
+
+{# Кнопка << #}
+{% if page_obj.has_previous %}
+  {% include "main/snippets/pagination/s_page_num_button.html" with enabled=True page_name="&laquo" page_number=page_obj.previous_page_number %}
+{% else %}
+  {% include "main/snippets/pagination/s_page_num_button.html" with enabled=False page_name="&laquo" %}
+{% endif %}
+{# Кнопки с номерами страниц #}
+{% for page_number in page_range %}
+  {% include "main/snippets/pagination/s_page_num_button.html" %}
+{% endfor %}
+{# Кнопка >> #}
+{% if page_obj.has_next %}
+  {% include "main/snippets/pagination/s_page_num_button.html" with enabled=True page_name="&raquo" page_number=page_obj.next_page_number %}
+{% else %}
+  {% include "main/snippets/pagination/s_page_num_button.html" with enabled=False page_name="&raquo" %}
+{% endif %}
+<span class="txt-muted f-right">{{ page_obj.start_index }} - {{ page_obj.end_index }} из {{ paginator.object_list|length }}</span>

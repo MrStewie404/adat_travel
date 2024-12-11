@@ -1,0 +1,9 @@
+<a href="{% if guest_list_url %} {{ guest_list_url }} {% else %}#{% endif %}" title="{% block link_title %}Перейти к списку гостей{% endblock %}">
+  <i class="icofont icofont-users-alt-3 " style="color: black;"></i>
+</a>
+<p class="text-nowrap d-inline-block" title="{% block count_text_title %}Мест занято/свободно{% endblock %}" data-toggle="tooltip" data-placement="bottom">
+  {% block text %}
+    {{ trip.busy_seats_count }}
+    <span class="txt-muted" style="opacity: 50%">/{{ trip.free_seats_count }}</span>
+  {% endblock %}
+</p>

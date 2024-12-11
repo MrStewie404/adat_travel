@@ -1,0 +1,188 @@
+[
+{
+    "model": "main.agency",
+    "fields": {
+        "name": "Демо-тур",
+        "phone_number": "",
+        "email": "",
+        "website": ""
+    }
+},
+{
+    "model": "main.person",
+    "fields": {
+        "agency": ["Демо-тур"],
+        "surname": "",
+        "name": "rn",
+        "middle_name": ""
+    }
+},
+{
+    "model": "main.agencyemployee",
+    "fields": {
+        "person_ptr": ["", "rn"],
+        "user": ["rn"],
+        "role": "ADMIN"
+    }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Гуниб",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Дербент",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Каспийск",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Махачкала",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Чох",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Мочох",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Избербаш",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Чалда",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Кизилюрт",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "п. Ново-Зубутли",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Хунзах",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Гоор",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Кубачи",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Хучада",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "с. Чирката",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+},
+{
+  "model": "main.city",
+  "fields": {
+    "name": "Салта",
+    "region": "",
+    "country": "Россия",
+    "lat": null,
+    "lon": null
+  }
+}
+]

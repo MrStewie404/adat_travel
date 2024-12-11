@@ -1,0 +1,55 @@
+{% load warnings_extensions %}
+
+<ul class="top-nav lft-nav">
+  {% include 'main/snippets/navbar/s_lmenu_item.html' with url='trips' name='Туры' icon_class='icofont icofont-luggage' warning_badge_title=agency_warnings|safe_get:"draft_companies" %}
+  {% if permissions.view.client %}
+    {% include 'main/snippets/navbar/s_lmenu_item.html' with url='clients' name='Гости' icon_class='icon-people' %}
+  {% endif %}
+  {% if permissions.view.worker %}
+    {% include 'main/snippets/navbar/s_lmenu_item.html' with url='workers' name='Гиды' icon_class='icofont icofont-id-card' %}
+  {% endif %}
+  {% if permissions.view.route %}
+    {% include 'main/snippets/navbar/s_lmenu_item.html' with url='routes' name='Шаблоны' icon_class='ti-direction-alt' %}
+  {% endif %}
+  {% if permissions.view.directory %}
+    {% include 'main/snippets/navbar/s_lmenu_item.html' with url='directory' name='Справочники' icon_class='icofont icofont-address-book' %}
+  {% endif %}
+  {% if permissions.add.something %}
+    <li class="hidden-xs-down">
+      <div class="dropdown-primary dropdown">
+        <button class="btn btn-primary dropdown-toggle waves-effect waves-light" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            title="Добавить">
+          <i class="icon-plus hidden-xl-up"></i>
+          <span class="hidden-lg-down">ДОБАВИТЬ</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdown1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+          {% if permissions.add.trip %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'trip_add' %}"><i class="icon-flag" style="display:inline-block; width: 30px"></i>Тур</a>
+          {% endif %}
+          {% if permissions.add.client %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'client_add' %}"><i class="icon-user" style="display:inline-block; width: 30px"></i>Гостя</a>
+          {% endif %}
+          {% if permissions.add.worker %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'worker_add' %}"><i class="icofont icofont-steering" style="display:inline-block; width: 30px"></i>Гида</a>
+          {% endif %}
+          {% if permissions.add.route %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'route_add' %}"><i class="ti-direction-alt" style="display:inline-block; width: 30px"></i>Шаблон тура</a>
+          {% endif %}
+          <div class="dropdown-divider"></div>
+          {% if permissions.add.city %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'city_add' %}"><i class="ti-map-alt" style="display:inline-block; width: 30px"></i>Город</a>
+          {% endif %}
+          {% if permissions.add.hotel %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'hotel_add' %}"><i class="icofont icofont-hotel" style="display:inline-block; width: 30px"></i>Гостиницу</a>
+          {% endif %}
+          {% if permissions.add.supplier %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'person_supplier_add' %}"><i class="icofont icofont-invisible" style="display:inline-block; width: 30px"></i>Контрагента</a>
+          {% endif %}
+          {% if permissions.add.service %}
+            <a class="dropdown-item waves-light waves-effect" href="{% url 'service_add' %}"><i class="icofont icofont-like" style="display:inline-block; width: 30px"></i>Услугу</a>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endif %}
+</ul>
