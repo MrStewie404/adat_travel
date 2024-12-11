@@ -1,0 +1,12 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Additional ignored files
+/tasks.xml
+/usage.statistics.xml
+/dictionaries/
+/dataSources/
+/dataSources.xml
+/dataSources.local.xml
+/dynamic.xml

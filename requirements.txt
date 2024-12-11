@@ -1,0 +1,25 @@
+asgiref==3.3.4
+Django==3.2.1
+docxtpl==0.11.5
+openpyxl==3.0.7
+Pillow==8.4.0
+python-pdf==0.39
+pytz==2021.1
+sqlparse==0.4.1
+django-crispy-forms==1.14.0
+six==1.16.0
+psycopg2==2.9.3
+idna==3.3
+django-model-utils==4.3.1
+django-environ==0.11.2
+
+phonenumbers==8.13.26
+beautifulsoup4==4.12.2
+pydf==12
+django-qr-code==3.1.1
+django-cleanup==8.1.0
+yookassa==3.1.0
+django-cryptography==1.1
+
+python-magic==0.4.27 ; platform_system!="Windows"
+python-magic-bin==0.4.14 ; platform_system=="Windows"
