@@ -1923,3 +1923,7 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 102: '
 WARNING 2024-12-12 12:10:57,837 Not Found: /favicon.ico
 WARNING 2024-12-12 12:11:21,454 Not Found: /favicon.ico
 INFO 2024-12-12 12:19:46,774 Watching for file changes with StatReloader
+INFO 2024-12-12 17:14:42,434 Watching for file changes with StatReloader
+WARNING 2024-12-12 17:14:46,152 Not Found: /
+WARNING 2024-12-12 17:14:46,190 Not Found: /favicon.ico
+INFO 2024-12-12 17:30:28,175 Watching for file changes with StatReloader

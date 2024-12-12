@@ -27,10 +27,10 @@
         <div class="d-inline-block f-bold text-center">
           <div class="dropdown dropdown-no-arrow d-inline-block">
             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Подробнее">
-              <h3 class="btn btn-success w-100" style="line-height: 1em; font-size: 24px; border-radius: 10px; min-width: 100px;">{{ month_stat.commission_paid|currency:0 }} ₽</h3>
+              <h3 class="btn btn-success w-100" style="line-height: 1em; font-size: 20px; border-radius: 10px; min-width: 100px;">Достижения</h3>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" style="border-radius: 10px; box-shadow: 0 0 10px rgb(80, 80, 80);" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-              <div class="row" style="display: flex; margin: 5px;">
+              <div> {% comment %} class="row" style="display: flex; margin: 5px;"> {% endcomment %}
                 <li>
                   {% comment %}<div class="d-inline-block f-bold text-center">{% endcomment %}
                     <div class="text-center panel-body f-bold text-center rn-panel-r-large">
@@ -40,6 +40,14 @@
                         <p class="f-bold txt-success" style="font-size: 18px;">+{{ month_stat_non_finished.tourists_count }}</p>
                       {% endif %}
                     </div>
+                </li>
+                <li>
+                  <div class="panel-body f-bold text-center rn-panel-r-large">
+                    <div class="text-center">
+                      Вы заработали
+                      <h3>{{ month_stat.commission_paid|currency:0 }} ₽</h3>
+                    </div>
+                  </div>
                 </li>
                 <li>
                     <div class="panel-body f-bold text-center rn-panel-r-large">
@@ -70,7 +78,7 @@
         <a href="{{ guest_link_url }}" class="js-qr-code" title="Нажмите для перехода по ссылке для самозаписи">
           <div class="dropdown dropdown-no-arrow d-inline-block">
             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Скопировать в буфер обмена">
-              {% qr_from_text guest_link_url size="7" image_format="png" %}
+              {% qr_from_text guest_link_url size="8" image_format="png" %}
             </a>
             <ul class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
               <li>
