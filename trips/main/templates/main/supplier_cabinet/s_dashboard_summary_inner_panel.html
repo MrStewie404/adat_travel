@@ -27,14 +27,13 @@
         <div class="d-inline-block f-bold text-center">
           <div class="dropdown dropdown-no-arrow d-inline-block">
             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Подробнее">
-              <h3 class="btn btn-success w-100" style="line-height: 1em; font-size: 24px; border-radius: 10px;">{{ month_stat.commission_paid|currency:0 }} ₽</h3>
+              <h3 class="btn btn-success w-100" style="line-height: 1em; font-size: 24px; border-radius: 10px; min-width: 100px;">{{ month_stat.commission_paid|currency:0 }} ₽</h3>
             </a>
-            <ul class="dropdown-menu dropdown-menu-right" style="border-radius: 10px;" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+            <ul class="dropdown-menu dropdown-menu-right" style="border-radius: 10px; box-shadow: 0 0 10px rgb(80, 80, 80);" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
               <div class="row" style="display: flex; margin: 5px;">
                 <li>
                   {% comment %}<div class="d-inline-block f-bold text-center">{% endcomment %}
                     <div class="text-center panel-body f-bold text-center rn-panel-r-large">
-                      
                       Туристов
                       <h3 style="line-height: 1em;">{{ month_stat.tourists_count }}</h3>
                       {% if month_stat_non_finished.tourists_count > 0 %}
@@ -44,7 +43,7 @@
                 </li>
                 <li>
                     <div class="panel-body f-bold text-center rn-panel-r-large">
-                      <div class="p-l-15 p-r-15 text-center">
+                      <div class="text-center">
                         К выплате
                         <h3 class="txt-danger" style="line-height: 1em;">{{ finished_stat.commission_remaining|currency:0 }}&nbsp;₽</h3>
                       </div>
@@ -66,13 +65,12 @@
     </div>
   </div>
   <div class="panel-body f-bold text-center m-t-10 rn-panel-r-large">
-    <div class="p-l-15 p-r-15">
       <br>
       {% if guest_link_url %}
-        {% comment %}<a href="{{ guest_link_url }}" class="js-qr-code" title="Нажмите для перехода по ссылке для самозаписи">{% endcomment %}
+        <a href="{{ guest_link_url }}" class="js-qr-code" title="Нажмите для перехода по ссылке для самозаписи">
           <div class="dropdown dropdown-no-arrow d-inline-block">
             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" title="Скопировать в буфер обмена">
-              {% qr_from_text guest_link_url size="8" image_format="png" %}
+              {% qr_from_text guest_link_url size="7" image_format="png" %}
             </a>
             <ul class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
               <li>
@@ -87,13 +85,19 @@
               </li>
             </ul>
           </div>
-        {% comment %}</a>{% endcomment %}
+        </a>
         <br>
+      {% endif %}
+      {% if guest_link_url %}
+        <a href="{{ guest_link_url }}" class="js-qr-code" title="Нажмите для перехода по ссылке для самозаписи">
+          <div style="display: none;">
+          {% qr_from_text guest_link_url size="1" image_format="png" %}
+          </div>
+        </a>
       {% else %}
         <a class="js-create-guest-link" href="#" data-request-url="{% url 'supplier_lk_get_guest_link' cabinet_id %}">
           Создать QR-код
         </a>
       {% endif %}
-    </div>
   </div>
 {% endblock panel_body %}
